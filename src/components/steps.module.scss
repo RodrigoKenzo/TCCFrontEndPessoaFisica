@@ -1,0 +1,20 @@
+.positionBottom{
+    position: fixed;
+    left: 50%;
+    bottom: -50px;
+    transform: translate(-50%, -50%);
+    margin: 0 auto;
+}
+
+.row{
+    display: flex;
+}
+
+.number{
+    padding: 2rem 5rem;
+    border: 1px solid;
+
+    .number-active{
+        color: darkgreen;
+    }
+}
