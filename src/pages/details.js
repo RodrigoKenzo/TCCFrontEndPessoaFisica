@@ -29,7 +29,7 @@ const Details = () => {
           </div>
           <div className={row}>
             <button className={buttonNao} type="button"><Link className={noLink} to="/ocurrency">Voltar</Link></button>
-            <button className={buttonSim} type="button"><Link className={noLink} to="/">Não é Necessário</Link></button>
+            <button className={buttonSim} type="button"><Link className={noLink} to="/instructions">Não é Necessário</Link></button>
           </div>
         </div>
       </div>
