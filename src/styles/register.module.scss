@@ -4,7 +4,6 @@ body {
     font-family: 'open sans';
     background-color: rgb(65, 65, 65);
     color:rgb(240, 240, 240);
-    margin: 0 auto;
 }
 
 input[type=text], select {
@@ -33,7 +32,7 @@ input[type=password], select {
 
 .backgroundImage {
     background-image: url('../images/Background4.png');
-    height: 935px;
+    font-size: 10px;
 }
 
 .HiddenDiv{
@@ -44,10 +43,10 @@ input[type=password], select {
 
 .container {
   margin: auto;
-  width: 28%;
+  width: 80%;
   height: 80%;
   background-color: rgb(41, 41, 41);
-  padding: 10px;
+  padding: 5px;
   border-radius: 10px;
   overflow: auto;
   position: absolute;
@@ -58,27 +57,25 @@ input[type=password], select {
 .textCentered {
   text-align: center;
   line-height: 1.5;
-  display: inline-block;
   vertical-align: middle;
 }
 
 .content {
     margin: auto;
-    padding: 20px 20px;
 }
 
 .row{
     display: flex;
     justify-content: space-around;
-    padding: 10px;
+    padding: 5px;
 }
 
 .rowButton{
     display: flex;
     justify-content: space-around;
-    padding: 10px;
+    padding: 5px;
     margin-top: 20px;
-}
+    }
 
 .noLink{
     color: black;
@@ -89,7 +86,7 @@ input[type=password], select {
     background: #f2709c;
     background: -webkit-linear-gradient(to left, #ff9472, #f2709c);
     background: linear-gradient(to left, #ff9472, #f2709c);
-    padding: 0.7rem 2rem;
+    padding: 0.5rem 1rem;
     border-radius: 0.8rem;
     border: transparent;
     cursor: pointer;

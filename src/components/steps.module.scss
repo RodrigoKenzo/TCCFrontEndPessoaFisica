@@ -1,9 +1,8 @@
 .positionBottom{
     position: fixed;
-    left: 50%;
-    bottom: -50px;
-    transform: translate(-50%, -50%);
-    margin: 0 auto;
+    bottom: 0;
+    width: 100%;
+    left: 15%;
 }
 
 .row{
@@ -11,10 +10,6 @@
 }
 
 .number{
-    padding: 2rem 5rem;
+    padding: 5% 5%;
     border: 1px solid;
-
-    .number-active{
-        color: darkgreen;
-    }
 }

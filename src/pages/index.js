@@ -2,7 +2,7 @@ import * as React from 'react'
 import { Link } from 'gatsby'
 import Header from '../components/header'
 import Steps from '../components/steps'
-import { loginDiv, row, content, loginButton, noLink, textCentered, roundButton } from '../styles/index.module.scss'
+import { noLink, textCentered, roundButton, textTopCentered } from '../styles/index.module.scss'
 
 const HomePage = () => {
   return (
@@ -19,7 +19,7 @@ const HomePage = () => {
 
       {/*Fazer DropDown no botao de login*/}
 
-
+      {/*
       <div className={loginDiv}>
         <div className={content}>
             <div className={row}>
@@ -32,7 +32,7 @@ const HomePage = () => {
               <button className={loginButton} type="button"><Link className={noLink} to="/">Login</Link></button>
             </div>
         </div>
-      </div>
+      </div>*/}
 
 
       {/*Botao para iniciar ocorrência*/}
@@ -41,8 +41,10 @@ const HomePage = () => {
       
       <div>
         <div className={textCentered}>
-          <h1>Ferramenta de Auxílio para Emergências Civis</h1>
-          <p>Descreva sua ocorrência</p>
+          <div className={textTopCentered}>
+            <h1>Ferramenta de Auxílio para Emergências Civis</h1>
+            <p>Descreva sua ocorrência</p>
+          </div>
           <div className={roundButton}>
             <Link className={noLink} to="/">
               Iniciar
@@ -50,6 +52,9 @@ const HomePage = () => {
           </div>
         </div>
       </div>
+
+
+
 
 
       {/*Colocar highlight em qual etapa o usuário se encontra*/}

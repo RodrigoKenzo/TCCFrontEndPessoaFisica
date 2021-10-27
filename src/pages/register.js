@@ -17,10 +17,10 @@ const RegistrationPage = ({ pageTitle }) => {
                     <input type="text" placeholder="Nome Completo" />
                 </div>
                 <div className={row}>
-                    <input type="text" placeholder="CPF" />
+                    <input type="text" placeholder="CPF Ex.: 123.123.123-12" />
                 </div>
                 <div className={row}>
-                    <input type="text" placeholder="Email" />
+                    <input type="text" placeholder="Email Ex.: Rodrigo@gmail.com" />
                 </div>
                 <div className={row}>
                     <input type="password" placeholder="Senha" />
@@ -36,6 +36,7 @@ const RegistrationPage = ({ pageTitle }) => {
                     <input type="text" placeholder="Rua" />
                     <input type="text" placeholder="Número" />
                 </div>
+                <hr/>
                 <div className={rowButton}>
                     <button className={buttonBack} type="button"><Link className={noLink} to="/">Voltar</Link></button>
                     <button className={buttonRegister} type="button"><Link className={noLink} to="/">Registrar</Link></button>
