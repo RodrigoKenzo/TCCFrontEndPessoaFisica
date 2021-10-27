@@ -9,7 +9,6 @@ const Steps = () => {
                 <h2 className={number}>2</h2>
                 <h2 className={number}>3</h2>
                 <h2 className={number}>4</h2>
-                <h2 className={number}>5</h2>
             </div>
         </div>
     )

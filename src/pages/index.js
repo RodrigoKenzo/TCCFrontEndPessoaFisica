@@ -46,7 +46,7 @@ const HomePage = () => {
             <p>Descreva sua ocorrência</p>
           </div>
           <div className={roundButton}>
-            <Link className={noLink} to="/">
+            <Link className={noLink} to="/ocurrency">
               Iniciar
             </Link>
           </div>
