@@ -37,6 +37,13 @@
 .row{
     display: flex;
     width: 100%;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+p {
+    font-size: 18px;
 }
 
 .buttonSim {

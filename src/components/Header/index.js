@@ -10,7 +10,9 @@ const Header = ({ pageTitle, pageHeading, children }) => {
         <title>{pageTitle}</title>
         <nav>
             <ul className={navLinks}>
-                <li className={navLinkItem}><Link className={navLinkText} to="/">FAEC</Link></li>
+                <li className={navLinkItem}>
+                  <Link className={navLinkText} to="/">FAEC</Link>
+                </li>
                 <li className={navRight}>
                   <Modal content={<Login />}/>
                 </li>
