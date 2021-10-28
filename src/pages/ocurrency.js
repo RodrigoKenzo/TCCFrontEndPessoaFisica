@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { Link } from 'gatsby'
-import Header from '../components/header'
-import Steps from '../components/steps'
+import Header from '../components/Header'
+import Steps from '../components/Steps'
 import ComboBox from "react-responsive-combo-box";
 import "react-responsive-combo-box/dist/index.css";
 import { noLink, textCentered, textTopCentered, row, buttonSim, buttonNao } from '../styles/ocurrency.module.scss'

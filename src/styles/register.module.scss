@@ -6,7 +6,7 @@ body {
     color:rgb(240, 240, 240);
 }
 
-input[type=text], select {
+input, select {
     padding: 12px 20px;
     margin: 0px 0;
     display: inline-block;
@@ -18,20 +18,9 @@ input[type=text], select {
     width: 100%;
 }
 
-input[type=password], select {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 0px 0;
-    display: inline-block;
-    border: 2px solid rgb(18, 73, 18);
-    border-radius: 4px;
-    margin-left: 10px;
-    margin-right: 10px;
-    box-sizing: border-box;
-}
 
 .backgroundImage {
-    background-image: url('../images/Background4.png');
+    background-image: gray;
     font-size: 10px;
 }
 

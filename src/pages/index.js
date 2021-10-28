@@ -1,40 +1,15 @@
 import * as React from 'react'
 import { Link } from 'gatsby'
-import Header from '../components/header'
-import Steps from '../components/steps'
+import Header from '../components/Header'
+import Steps from '../components/Steps'
 import { noLink, textCentered, roundButton, textTopCentered } from '../styles/index.module.scss'
 
 const HomePage = () => {
   return (
     <main>
-
-      {/*Título da página*/}
-
       <Header 
         pageTitle='Site Home' 
-      >
-        
-      </Header>
-
-
-      {/*Fazer DropDown no botao de login*/}
-
-      {/*
-      <div className={loginDiv}>
-        <div className={content}>
-            <div className={row}>
-              <input type="text" placeholder="Email" />
-            </div>
-            <div className={row}>
-              <input type="password" placeholder="Senha" />
-            </div>
-            <div className={row}>
-              <button className={loginButton} type="button"><Link className={noLink} to="/">Login</Link></button>
-            </div>
-        </div>
-      </div>*/}
-
-
+      />
       {/*Botao para iniciar ocorrência*/}
       {/*Fazer em One-Page Style*/}
       {/*Fazer a função de mudar entre as etapas (passos)*/}
