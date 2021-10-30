@@ -80,10 +80,10 @@ input, select {
     border: transparent;
     cursor: pointer;
     font-size: 20px;
-}
 
-.buttonBack:hover{
-    filter: brightness(110%);
+    &:hover{
+        filter: brightness(110%);
+    }
 }
 
 .buttonRegister{
@@ -95,8 +95,9 @@ input, select {
     border: transparent;
     cursor: pointer;
     font-size: 20px;
+    
+    &:hover{
+        filter: brightness(110%);
+    }
 }
 
-.buttonRegister:hover{
-    filter: brightness(110%);
-}

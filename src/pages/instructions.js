@@ -3,7 +3,7 @@ import { Link } from 'gatsby'
 import Header from '../components/Header'
 import Steps from '../components/Steps'
 import "react-responsive-combo-box/dist/index.css";
-import { noLink, textCentered, textTopCentered, row, buttonSim, buttonNao, instructionsText } from '../styles/details.module.scss'
+import { noLink, textCentered, textTopCentered, row, buttonSim, buttonNao } from '../styles/details.module.scss'
 
 const Instructions = () => {
   return (
