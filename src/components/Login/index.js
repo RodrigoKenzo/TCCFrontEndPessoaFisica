@@ -1,7 +1,7 @@
 import * as React from "react";
-import { Link } from 'gatsby'
+import { Link } from "gatsby";
 import { useForm } from "react-hook-form";
-import './styles.scss'
+import "./styles.scss";
 import {
   container,
   textCentered,
@@ -43,13 +43,13 @@ const Login = ({ pageTitle }) => {
                   {...register("password", { required: true, maxLength: 20 })}
                 />
               </div>
-              <hr />              
+              <hr />
               <div className={rowButton}>
-              <button className={buttonBack} type="submit">
+                <button className={buttonBack} type="submit">
                   <Link className={noLink} to="/register">
                     Registrar
                   </Link>
-              </button>
+                </button>
                 <input className={buttonRegister} type="submit" />
               </div>
             </form>

@@ -13,10 +13,12 @@ import {
   buttonRegister,
 } from "../styles/register.module.scss";
 
+import newRegister from '../services/register.service'
+
 const RegistrationPage = ({ pageTitle }) => {
   const { register, handleSubmit } = useForm();
-  const onSubmit = (data) => console.log(data);
-
+  const onSubmit = (data) => newRegister(data);
+  
   return (
     <main>
       <div className={backgroundImage}>
@@ -34,12 +36,22 @@ const RegistrationPage = ({ pageTitle }) => {
                   placeholder="Nome Completo"
                   {...register("name", {required:true, maxLength:20})}                  
                 />
+                 <input
+                  type="text"
+                  placeholder="Usuário"
+                  {...register("userName", {required:true, maxLength:20})}                  
+                />
               </div>
               <div className={row}>
                 <input
                   type="number"
                   placeholder="CPF Ex.: 123.123.123-12"
                   {...register("cpf", {required:true, maxLength:11})}
+                />
+                 <input
+                  type="number"
+                  placeholder="dn. ex.00/00/0000"
+                  {...register("birthDate", {required:true, maxLength:11})}
                 />
               </div>
               <div className={row}>
@@ -61,10 +73,11 @@ const RegistrationPage = ({ pageTitle }) => {
                 <input type="number" placeholder="Cep" {...register("cep",{required:true ,maxLength:8})} />
               </div>
               <div className={row}>
-                <input type="text" placeholder="Cidade" {...register("city",{required:true,maxLength:20})} />
+                <input type="text" placeholder="Rua" {...register("street",{required:true,maxLength:20})} />
               </div>
               <div className={row}>
-                <input type="text" placeholder="Rua" {...register("street",{required:true,maxLength:50})} />
+                <input type="text" placeholder="Cidade" {...register("city",{required:true,maxLength:50})} />
+                <input type="text" placeholder="bairro" {...register("district",{required:true,maxLength:50})} />
                 <input
                   type="text"
                   placeholder="Número"
