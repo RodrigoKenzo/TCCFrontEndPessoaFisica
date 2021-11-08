@@ -1,40 +1,32 @@
- async function newRegister(register) {
+const newRegister = async (register) => {
+  const myHeaders = new Headers();
+  myHeaders.append("Content-Type", "application/json");
+  myHeaders.append("Access-Control-Allow-Origin", "*");
+  myHeaders.append("Access-Control-Allow-Headers", "Content-Type");
 
-  
-    function status(response) {
-    if (response.status >= 200 && response.status < 300) {
-      return Promise.resolve(response);
-    } else {
-      return Promise.reject(new Error(response.statusText));
-    }
-  }
+  const url = "https://127.0.0.1:5001/api/PessoasFisicas";
+  const data = {
+    "username": register.userName,
+    "password": register.password,
+    "email": register.email,
+    "name": register.name,
+    "cep": register.cep,
+    "street": register.street,
+    "number": register.number,
+    "district": register.district,
+    "dateCreation": Date.now(),
+    "cpf": register.cpf,
+    "rg": register.rg,
+    "birthDate": register.birthDate,
+  };
 
-  await fetch("https://localhost:44388/api/PessoasFisicas", {
+  console.log(JSON.stringify(data));
+
+  await fetch(url, {
     method: "post",
-    mode: 'no-cors',
-    headers: {
-      "Content-Type": "application/json", 
-      'Accept': 'application/json',
-      'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Credentials': 'true',
-      'Access-Control-Request-Method': 'POST',
-      'mode':'no-cors'
-    },
-    body: JSON.stringify({       
-        username: register.userName,
-        password: register.password,
-        email: register.email,
-        name: register.name,
-        cep: register.cep,
-        street: register.street,
-        number: register.number,
-        district: register.district,
-        dateCreation: Date.now(),
-        cpf: register.cpf,
-        rg: register.rg,
-        birthDate: register.birthDate
-    }),
+    headers: myHeaders,
+    body: JSON.stringify(data),
   }).then((response) => console.log(response));
- }
+};
 
- export default newRegister;
+export default newRegister;
