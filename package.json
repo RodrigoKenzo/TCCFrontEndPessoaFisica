@@ -23,6 +23,5 @@
     "react-hook-form": "^7.18.0",
     "react-responsive-combo-box": "^1.2.9",
     "sass": "^1.43.2"
-  },
-  "proxy":"https://cors-anywhere.herokuapp.com"
+  }
 }
