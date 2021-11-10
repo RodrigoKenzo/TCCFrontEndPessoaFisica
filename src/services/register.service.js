@@ -4,7 +4,7 @@ const newRegister = async (register) => {
   myHeaders.append("Access-Control-Allow-Origin", "*");
   myHeaders.append("Access-Control-Allow-Headers", "Content-Type");
 
-  const url = "https://127.0.0.1:44388/api/PessoasFisicas";
+  const url = "http://127.0.0.1:5000/api/PessoasFisicas";
   const data = {
     "username": register.userName,
     "password": register.password,
