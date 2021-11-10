@@ -1,7 +1,6 @@
 const newRegister = async (register) => {
   const myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
-  myHeaders.append("Access-Control-Allow-Origin", "*");
   myHeaders.append("Access-Control-Allow-Headers", "Content-Type");
 
   const url = "http://127.0.0.1:5000/api/PessoasFisicas";
