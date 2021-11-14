@@ -71,12 +71,20 @@ input, select {
     text-decoration: none;
 }
 
+.registerLink {
+    color: aqua;
+    text-decoration: none;
+}
+
+.backLink {
+    color: black;
+    text-decoration: none;
+}
+
 .buttonBack{
-    background: #f2709c;
-    background: -webkit-linear-gradient(to left, #ff9472, #f2709c);
-    background: linear-gradient(to left, #ff9472, #f2709c);
+    background: rgb(255, 83, 83);
     padding: 0.5rem 1rem;
-    border-radius: 0.8rem;
+    border-radius: 0.4rem;
     border: transparent;
     cursor: pointer;
     font-size: 20px;
@@ -87,11 +95,9 @@ input, select {
 }
 
 .buttonRegister{
-    background: #11998e;
-    background: -webkit-linear-gradient(to right, #38ef7d, #11998e);
-    background: linear-gradient(to right, #38ef7d, #11998e);
+    background: #27e79e;
     padding: 0.7rem 2rem;
-    border-radius: 0.8rem;
+    border-radius: 0.4rem;
     border: transparent;
     cursor: pointer;
     font-size: 20px;
@@ -101,3 +107,10 @@ input, select {
     }
 }
 
+.buttonTransparent {
+    background-color: transparent;
+    color: black;
+    border: 3px solid black;
+    font-size: 20px;
+    padding: 15px 32px;
+}

@@ -8,7 +8,7 @@ import {
   content,
   row,
   rowButton,
-  noLink,
+  backLink,
   buttonBack,
   buttonRegister,
 } from "../styles/register.module.scss";
@@ -20,6 +20,7 @@ const RegistrationPage = ({ pageTitle }) => {
   const onSubmit = (data) => newRegister(data);
   
   return (
+    //Deixar scroll só nos inputs
     <main>
       <div className={backgroundImage}>
         <title>{pageTitle}</title>
@@ -87,7 +88,7 @@ const RegistrationPage = ({ pageTitle }) => {
               <hr />
               <div className={rowButton}>
                 <button className={buttonBack} type="submit">
-                  <Link className={noLink} to="/">
+                  <Link className={backLink} to="/">
                     Voltar
                   </Link>
                 </button>

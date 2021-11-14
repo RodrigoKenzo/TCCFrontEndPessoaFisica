@@ -47,12 +47,11 @@ p {
 }
 
 .buttonSim {
-    background: #11998e;
-    background: -webkit-linear-gradient(to right, #38ef7d, #11998e);
-    background: linear-gradient(to right, #38ef7d, #11998e);
-    padding: 0.7rem 2rem;
-    border-radius: 0.8rem;
-    border: transparent;
+    background: rgb(230, 230, 230);
+    padding: 0.5rem 1.5rem;
+    border-radius: 0.3rem;
+    border-color: cornflowerblue;
+    border-style: solid;
     cursor: pointer;
     font-size: 20px;
     margin-right: 5px;
@@ -60,12 +59,11 @@ p {
 }
 
 .buttonNao {
-    background: #f2709c;
-    background: -webkit-linear-gradient(to left, #ff9472, #f2709c);
-    background: linear-gradient(to left, #ff9472, #f2709c);
-    padding: 0.5rem 1rem;
-    border-radius: 0.8rem;
-    border: transparent;
+    background: rgb(230, 230, 230);
+    padding: 0.5rem 1.5rem;
+    border-radius: 0.3rem;
+    border-color: rgb(255, 83, 83);
+    border-style: solid;
     cursor: pointer;
     font-size: 20px;
     margin-left: 5px;

@@ -3,7 +3,11 @@ import { Link } from 'gatsby'
 import Header from '../components/Header'
 import Steps from '../components/Steps'
 import "react-responsive-combo-box/dist/index.css";
-import { noLink, textCentered, textTopCentered, row, buttonSim, buttonNao } from '../styles/details.module.scss'
+import {
+  buttonBack,
+  buttonRegister
+} from '../styles/register.module.scss'
+import { noLink, textCentered, textTopCentered, row } from '../styles/details.module.scss'
 
 const Details = () => {
   return (
@@ -28,8 +32,8 @@ const Details = () => {
             <textarea type="text" style={{width: "70%", margin: "auto", marginBottom: "20px", height: "15rem"}} placeholder="Mais detalhes..." />
           </div>
           <div className={row}>
-            <button className={buttonNao} type="button"><Link className={noLink} to="/ocurrency">Voltar</Link></button>
-            <button className={buttonSim} type="button"><Link className={noLink} to="/instructions">Não é Necessário</Link></button>
+            <button className={buttonBack} type="button"><Link className={noLink} to="/ocurrency">Voltar</Link></button>
+            <button className={buttonRegister} type="button"><Link className={noLink} to="/instructions">Não é Necessário</Link></button>
           </div>
         </div>
       </div>

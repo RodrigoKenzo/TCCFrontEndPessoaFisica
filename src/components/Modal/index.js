@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import ModalContent from "./ModalContent"
 import './styles.scss';
 import { 
-  buttonRegister,
+  buttonTransparent,
 } from "../../styles/register.module.scss";
 
 const Modal = ({content}) => {
@@ -10,7 +10,7 @@ const Modal = ({content}) => {
 
   return (
     <div className="login-modal">
-      <button className={buttonRegister} onClick={() => setModalIsOpen(!modalIsOpen)}>Login</button>
+      <button className={buttonTransparent} onClick={() => setModalIsOpen(!modalIsOpen)}>Login</button>
       {modalIsOpen ? 
       <ModalContent close={() => setModalIsOpen(!modalIsOpen)}>
         {content}

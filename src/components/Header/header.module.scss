@@ -12,13 +12,15 @@
 .nav-links {
     display: flex;
     list-style: none;
-    background-color: rgb(145, 68, 68);
+    //background-color: rgb(145, 68, 68);
+    background-color: rgb(71, 118, 206);
+    padding: 10px 10px;
 }
 
 .nav-link-item {
-    padding: 1rem;
+    padding: 1rem 1rem;
     margin-left: 5%;
-    margin-top: 2.5%;
+    margin-top: 1.5%;
     font-size: 40px;
 }
 
@@ -30,7 +32,6 @@
 .nav-Right{
     flex-grow: 1;
     text-align: right;
-    padding: 2.5%;
     font-size: 20px;
     margin-top: 10px;
     margin-right: 5%;

@@ -7,10 +7,10 @@ import {
   textCentered,
   backgroundImage,
   content,
+  registerLink,
   row,
   rowButton,
-  noLink,
-  buttonBack,
+  //buttonBack,
   buttonRegister,
 } from "../../styles/register.module.scss";
 
@@ -45,12 +45,19 @@ const Login = ({ pageTitle }) => {
               </div>
               <hr />
               <div className={rowButton}>
-                <button className={buttonBack} type="submit">
+                {/*<button className={buttonBack} type="submit">
                   <Link className={noLink} to="/register">
                     Registrar
                   </Link>
-                </button>
+                </button>*/}
                 <input className={buttonRegister} type="submit" />
+              </div>
+              <div>
+                <h2>Não tem cadastro?
+                  <Link className={registerLink} type="submit" to="/register">
+                    Cadastre-se aqui
+                  </Link>
+                </h2>
               </div>
             </form>
           </div>

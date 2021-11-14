@@ -4,7 +4,18 @@ import Header from '../components/Header'
 import Steps from '../components/Steps'
 import ComboBox from "react-responsive-combo-box";
 import "react-responsive-combo-box/dist/index.css";
-import { noLink, textCentered, textTopCentered, row, buttonSim, buttonNao } from '../styles/ocurrency.module.scss'
+import {
+  buttonBack,
+  buttonRegister
+} from '../styles/register.module.scss'
+import { 
+  noLink, 
+  textCentered, 
+  textTopCentered, 
+  row, 
+  buttonSim, 
+  buttonNao 
+} from '../styles/ocurrency.module.scss'
 
 const Ocurrency = () => {
 
@@ -67,8 +78,8 @@ const Ocurrency = () => {
             <input type="text" style={{width: "60%", margin: "auto", marginBottom: "20px"}} placeholder="Nº envolvidos Ex.: 3" />
           </div>
           <div className={row}>
-            <button className={buttonNao} type="button"><Link className={noLink} to="/">Voltar</Link></button>
-            <button className={buttonSim} type="button"><Link className={noLink} to="/details">Prosseguir</Link></button>
+            <button className={buttonBack} type="button"><Link className={noLink} to="/">Voltar</Link></button>
+            <button className={buttonRegister} type="button"><Link className={noLink} to="/details">Prosseguir</Link></button>
           </div>
         </div>
       </div>
