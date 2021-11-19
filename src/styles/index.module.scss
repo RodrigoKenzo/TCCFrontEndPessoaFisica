@@ -13,7 +13,6 @@
 }
 
 p {
-    font-size: 18px;
     margin-top: 5%;
 }
 
@@ -26,17 +25,11 @@ p {
     width: 250px;
     height: 70px;
     border-radius: 3%;
-    position: fixed;
-    left: 50%;
-    top: 65%;
-    transform: translate(-50%, -50%);
 }
 
 .textTopCentered{
-    position: fixed;
+    margin-top: 50px;
     width: 100%;
-    left: 50%;
-    top: 35%;
-    transform: translate(-50%, -50%);
     font-size: 15px;
+    margin-bottom: 80px;
 }

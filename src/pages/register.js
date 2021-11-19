@@ -92,7 +92,7 @@ const RegistrationPage = ({ pageTitle }) => {
                     Voltar
                   </Link>
                 </button>
-                <input className={buttonRegister} type="submit" />
+                <input className={buttonRegister} type="submit" value="Enviar" />
               </div>
             </form>
           </div>

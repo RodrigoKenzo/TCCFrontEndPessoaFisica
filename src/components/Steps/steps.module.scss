@@ -1,15 +1,18 @@
 .positionBottom{
-    position: fixed;
     bottom: 0;
     width: 100%;
-    left: 22%;
+    margin-top: auto;
+    position: absolute;
 }
 
 .row{
     display: flex;
+    width: 100%;
 }
 
 .number{
-    padding: 5% 5%;
+    text-align: center;
+    padding: 18px 0;
+    width: 100%;
     border: 1px solid;
 }

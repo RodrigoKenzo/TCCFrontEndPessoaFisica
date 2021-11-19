@@ -11,7 +11,8 @@ import {
   row,
   rowButton,
   //buttonBack,
-  buttonRegister,
+  textLeft,
+  buttonRegister
 } from "../../styles/register.module.scss";
 
 const Login = ({ pageTitle }) => {
@@ -24,7 +25,7 @@ const Login = ({ pageTitle }) => {
         <title>{pageTitle}</title>
         <div className={container}>
           <div className={textCentered}>
-            <p>Login</p>
+            <p style={{fontSize: "16px"}}>Login</p>
           </div>
           <hr />
           <div className={content}>
@@ -50,14 +51,13 @@ const Login = ({ pageTitle }) => {
                     Registrar
                   </Link>
                 </button>*/}
-                <input className={buttonRegister} type="submit" />
+                <input className={buttonRegister} type="submit" value="Entrar" />
               </div>
-              <div>
-                <h2>Não tem cadastro?
-                  <Link className={registerLink} type="submit" to="/register">
+              <div className={textLeft}>
+                <h2>Não tem cadastro?</h2>
+                <Link className={registerLink} type="submit" to="/register">
                     Cadastre-se aqui
-                  </Link>
-                </h2>
+                </Link>
               </div>
             </form>
           </div>
