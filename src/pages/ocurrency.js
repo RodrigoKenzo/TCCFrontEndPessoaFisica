@@ -68,19 +68,32 @@ const Ocurrency = () => {
               onChange={(event) => console.log(event.target.value)}
               enableAutocomplete
             />
+            <p>Quantos envolvidos?</p>
+            <div className={row}>
+              <input type="text" style={{width: "60%", margin: "auto"}} placeholder="Nº envolvidos Ex.: 3" />
+            </div>
             <p>Houve vítimas?</p>
             <div className={row}>
               <button className={buttonSim} type="button"><Link className={noLink}>Sim</Link></button>
               <button className={buttonNao} type="button"><Link className={noLink}>Não</Link></button>
             </div>
-            <p>Quantos envolvidos?</p>
+            <p>Quantas vítimas?</p>
             <div className={row}>
-              <input type="text" style={{width: "60%", margin: "auto", marginBottom: "20px"}} placeholder="Nº envolvidos Ex.: 3" />
+              <input type="text" style={{width: "60%", margin: "auto"}} placeholder="Nº vítimas Ex.: 1" />
+            </div>
+            <p>Houve feridos?</p>
+            <div className={row}>
+              <button className={buttonSim} type="button"><Link className={noLink}>Sim</Link></button>
+              <button className={buttonNao} type="button"><Link className={noLink}>Não</Link></button>
+            </div>
+            <p>Quantos feridos?</p>
+            <div className={row}>
+              <input type="text" style={{width: "60%", margin: "auto"}} placeholder="Nº vítimas Ex.: 1" />
             </div>
           </div>
           <div className={lastRow}>
             <button className={buttonBack} type="button"><Link className={noLink} to="/">Voltar</Link></button>
-            <button className={buttonRegister} type="button"><Link className={noLink} to="/details">Prosseguir</Link></button>
+            <button className={buttonRegister} type="button"><Link className={noLink} to="/address">Prosseguir</Link></button>
           </div>
         </div>
       </div>

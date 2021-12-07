@@ -7,7 +7,8 @@ import {
   buttonBack,
   buttonRegister
 } from '../styles/register.module.scss'
-import { noLink, textCentered, textTopCentered, row, lastRow } from '../styles/details.module.scss'
+import { noLink, textCentered, textTopCentered, row } from '../styles/details.module.scss'
+import { lastRow } from '../styles/instructions.module.scss'
 
 const Instructions = () => {
   return (

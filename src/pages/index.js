@@ -14,6 +14,13 @@ const HomePage = () => {
       {/*Fazer em One-Page Style*/}
       {/*Fazer a função de mudar entre as etapas (passos)*/}
       
+      {/*
+      Componente Index caso usuário esteja logado e não logado
+      Criação dos campos das ocorrências genéricas
+      Criar página de localização do usuário
+      Adicionar na página de instructions se a ocorrência foi atendida ou não
+      */}
+      
       <div>
         <div className={textCentered}>
           <div className={textTopCentered}>

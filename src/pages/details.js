@@ -25,10 +25,10 @@ const Details = () => {
             <h1>Deseja dar mais detalhes?</h1>
           </div>
           <div className={row}>
-            <textarea type="text" style={{width: "70%", margin: "auto", marginBottom: "20px", height: "15rem", resize: "none"}} placeholder="Mais detalhes..." />
+            <textarea type="text" style={{width: "70%", margin: "auto", marginBottom: "20px", height: "40vh", resize: "none"}} placeholder="Mais detalhes..." />
           </div>
           <div className={lastRow}>
-            <button className={buttonBack} type="button"><Link className={noLink} to="/ocurrency">Voltar</Link></button>
+            <button className={buttonBack} type="button"><Link className={noLink} to="/address">Voltar</Link></button>
             <button className={buttonRegister} type="button"><Link className={noLink} to="/instructions">Não é Necessário</Link></button>
           </div>
         </div>
