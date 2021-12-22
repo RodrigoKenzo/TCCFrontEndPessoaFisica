@@ -1,8 +1,7 @@
+import { myHeaders } from "../utils/requestHeaders";
+
+
 const newRegister = async (register) => {
-  const myHeaders = new Headers();
-  myHeaders.append("Content-Type", "application/json");
-  myHeaders.append("Access-Control-Allow-Headers", "Content-Type");
-  myHeaders.append("Acces-Control-AllowOrigin","*")
 
   var DateTime = new Date()
   
