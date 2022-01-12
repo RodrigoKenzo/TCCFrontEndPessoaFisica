@@ -2,6 +2,7 @@ import * as React from "react";
 import { Link } from "gatsby";
 import { useForm } from "react-hook-form";
 import "./styles.scss";
+import { login } from "../../services/login.service";
 import {
   container,
   textCentered,
@@ -12,12 +13,12 @@ import {
   rowButton,
   //buttonBack,
   textLeft,
-  buttonRegister
+  buttonRegister,
 } from "../../styles/register.module.scss";
 
 const Login = ({ pageTitle }) => {
   const { register, handleSubmit } = useForm();
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data) => login(data);
 
   return (
     <main>
@@ -25,16 +26,16 @@ const Login = ({ pageTitle }) => {
         <title>{pageTitle}</title>
         <div className={container}>
           <div className={textCentered}>
-            <p style={{fontSize: "16px"}}>Login</p>
+            <p style={{ fontSize: "16px" }}>Login</p>
           </div>
           <hr />
           <div className={content}>
             <form onSubmit={handleSubmit(onSubmit)}>
               <div className={row}>
                 <input
-                  type="email"
-                  placeholder="Email Ex.: Rodrigo@gmail.com"
-                  {...register("email", { required: true, maxLength: 30 })}
+                  type="string"
+                  placeholder="Usuário"
+                  {...register("username", { required: true, maxLength: 30 })}
                 />
               </div>
               <div className={row}>
@@ -51,12 +52,16 @@ const Login = ({ pageTitle }) => {
                     Registrar
                   </Link>
                 </button>*/}
-                <input className={buttonRegister} type="submit" value="Entrar" />
+                <input
+                  className={buttonRegister}
+                  type="submit"
+                  value="Entrar"
+                />
               </div>
               <div className={textLeft}>
                 <h2>Não tem cadastro?</h2>
                 <Link className={registerLink} type="submit" to="/register">
-                    Cadastre-se aqui
+                  Cadastre-se aqui
                 </Link>
               </div>
             </form>
