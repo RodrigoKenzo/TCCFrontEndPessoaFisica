@@ -9,12 +9,12 @@ import {
   buttonRegister
 } from '../styles/register.module.scss'
 import { 
-  noLink, 
-  textCentered, 
-  textTopCentered, 
-  row, 
+  noLink,
+  textCentered,
+  textTopCentered,
+  row,
   lastRow,
-  buttonSim, 
+  buttonSim,
   buttonNao,
   ocurrencyContainer
 } from '../styles/ocurrency.module.scss'
@@ -22,18 +22,18 @@ import {
 const Ocurrency = () => {
 
   const ocurrencyType = [
-    "Ameaça",
-    "Estelionato",
-    "Roubo ou furto a estabelecimento comercial",
-    "Roubo ou furto a residência",
-    "Roubo ou furto de carga",
-    "Crimes contra o consumidor",
-    "Furto",
-    "Injúria",
-    "Difamação",
-    "Calúnia",
-    "Desaparecimento"
-  ];
+    "Acidente de trânsito",
+    "Crime",
+    "Desavença Civil",
+    "Desastres Naturais"
+  ]
+
+  const urgencyType = [
+    "Urgente",
+    "Alto",
+    "Médio",
+    "Baixo"
+  ]
 
   return (
     <main>
@@ -41,7 +41,6 @@ const Ocurrency = () => {
       <Header 
         pageTitle='Site Home' 
       >
-        
       </Header>
       
       <div>
@@ -91,6 +90,24 @@ const Ocurrency = () => {
               <input type="text" style={{width: "60%", margin: "auto"}} placeholder="Nº vítimas Ex.: 1" />
             </div>
           </div>
+          <ComboBox
+              options={urgencyType}
+              placeholder="Escolha uma opção"
+              defaultIndex={4}
+              optionsListMaxHeight={150}
+              style={{
+              width: "60%",
+              margin: "0 auto",
+              color: "black",
+              marginBottom: 15
+              }}
+              focusColor="#20C374"
+              renderOptions={(option) => (
+              <div className="comboBoxOption">{option}</div>
+              )}
+              onChange={(event) => console.log(event.target.value)}
+              enableAutocomplete
+            />
           <div className={lastRow}>
             <button className={buttonBack} type="button"><Link className={noLink} to="/">Voltar</Link></button>
             <button className={buttonRegister} type="button"><Link className={noLink} to="/address">Prosseguir</Link></button>

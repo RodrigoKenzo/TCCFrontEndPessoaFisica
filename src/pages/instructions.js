@@ -8,7 +8,7 @@ import {
   buttonRegister
 } from '../styles/register.module.scss'
 import { noLink, textCentered, textTopCentered, row } from '../styles/details.module.scss'
-import { lastRow } from '../styles/instructions.module.scss'
+import { lastRow, ocurrencyStatus, status1, status2, status3 } from '../styles/instructions.module.scss'
 
 const Instructions = () => {
   return (
@@ -20,7 +20,7 @@ const Instructions = () => {
         
       </Header>
       
-      <div>
+      <React.Fragment>
         <div className={textCentered}>
           <div className={textTopCentered}>
             <h1>Ocorrência Finalizada</h1>
@@ -29,12 +29,23 @@ const Instructions = () => {
           <div className={row}>
             <p style={{textAlign: "justify", padding: "0 30px"}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla at risus. Quisque purus magna, auctor et, sagittis ac, posuere eu, lectus. Nam mattis, felis ut adipiscing.</p>
           </div>
+          <div className={ocurrencyStatus}>
+            <div className={status1}>
+              Enviado
+            </div>
+            <div className={status2}>
+              Recebido
+            </div>
+            <div className={status3}>
+              Atendido
+            </div>
+          </div>
           <div className={lastRow}>
             <button className={buttonBack} type="button"><Link className={noLink} to="/details">Voltar</Link></button>
             <button className={buttonRegister} type="button"><Link className={noLink} to="/">Finalizar</Link></button>
           </div>
         </div>
-      </div>
+      </React.Fragment>
       <Steps />
     </main>
   )

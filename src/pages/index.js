@@ -10,14 +10,9 @@ const HomePage = () => {
       <Header 
         pageTitle='Site Home' 
       />
-      {/*Botao para iniciar ocorrência*/}
-      {/*Fazer em One-Page Style*/}
-      {/*Fazer a função de mudar entre as etapas (passos)*/}
-      
+
       {/*
-      Componente Index caso usuário esteja logado e não logado
       Criação dos campos das ocorrências genéricas
-      Criar página de localização do usuário
       Adicionar na página de instructions se a ocorrência foi atendida ou não
       */}
       
@@ -27,11 +22,11 @@ const HomePage = () => {
             <h1>Ferramenta de Auxílio para Emergências Civis</h1>
             <p>Descreva sua ocorrência</p>
           </div>
-          <div className={roundButton}>
-            <Link className={noLink} to="/ocurrency">
+          <Link className={noLink} to="/ocurrency">
+            <div className={roundButton}>
               Iniciar
-            </Link>
-          </div>
+            </div>
+          </Link>
         </div>
       </div>
 

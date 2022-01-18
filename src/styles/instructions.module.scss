@@ -69,3 +69,27 @@
     width: 100%;
     margin-top: 20vh;
 }
+
+.ocurrencyStatus {
+    margin-top: 8vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.status1 {
+    padding: 0.5rem 1rem;
+    background-color: #ff9472;
+}
+
+.status2 {
+    padding: 0.5rem 1rem;
+    background-color: #f2709c;
+    opacity: 0.4;
+}
+
+.status3 {
+    padding: 0.5rem 1rem;
+    background-color: #11998e;
+    opacity: 0.4;
+}

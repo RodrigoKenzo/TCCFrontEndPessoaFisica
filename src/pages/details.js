@@ -19,7 +19,7 @@ const Details = () => {
         
       </Header>
       
-      <div>
+      <React.Fragment>
         <div className={textCentered}>
           <div className={textTopCentered}>
             <h1>Deseja dar mais detalhes?</h1>
@@ -32,7 +32,7 @@ const Details = () => {
             <button className={buttonRegister} type="button"><Link className={noLink} to="/instructions">Não é Necessário</Link></button>
           </div>
         </div>
-      </div>
+      </React.Fragment>
       <Steps />
     </main>
   )
