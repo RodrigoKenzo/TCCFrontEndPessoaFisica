@@ -1,7 +1,6 @@
 import * as React from 'react'
 import { Link } from 'gatsby'
 import Header from '../components/Header'
-import Steps from '../components/Steps'
 import "react-responsive-combo-box/dist/index.css";
 import {
   buttonBack,
@@ -14,7 +13,7 @@ const Details = () => {
     <main>
 
       <Header 
-        pageTitle='Site Home' 
+        pageTitle='Details' 
       >
         
       </Header>
@@ -33,7 +32,6 @@ const Details = () => {
           </div>
         </div>
       </React.Fragment>
-      <Steps />
     </main>
   )
 }

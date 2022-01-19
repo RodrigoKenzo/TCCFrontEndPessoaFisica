@@ -1,7 +1,6 @@
 import * as React from 'react'
 import { Link } from 'gatsby'
 import Header from '../components/Header'
-import Steps from '../components/Steps'
 import "react-responsive-combo-box/dist/index.css";
 import {
   buttonBack,
@@ -54,7 +53,6 @@ const Address = () => {
           </div>
         </div>
       </div>
-      <Steps />
     </main>
   )
 }

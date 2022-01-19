@@ -1,7 +1,6 @@
 import * as React from 'react'
 import { Link } from 'gatsby'
 import Header from '../components/Header'
-import Steps from '../components/Steps'
 import "react-responsive-combo-box/dist/index.css";
 import {
   buttonBack,
@@ -15,7 +14,7 @@ const Instructions = () => {
     <main>
 
       <Header 
-        pageTitle='Site Home' 
+        pageTitle='Instructions' 
       >
         
       </Header>
@@ -27,7 +26,7 @@ const Instructions = () => {
             <p>Orientações Pós Ocorrência</p>
           </div>
           <div className={row}>
-            <p style={{textAlign: "justify", padding: "0 30px"}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla at risus. Quisque purus magna, auctor et, sagittis ac, posuere eu, lectus. Nam mattis, felis ut adipiscing.</p>
+            <p style={{textAlign: "justify", padding: "0 30px"}}>Você será atendido em breve, aguarde o profissional chegar ao local, se possível mantenha-se afastado da ocorrência, e sinalize em volta.</p>
           </div>
           <div className={ocurrencyStatus}>
             <div className={status1}>
@@ -46,7 +45,6 @@ const Instructions = () => {
           </div>
         </div>
       </React.Fragment>
-      <Steps />
     </main>
   )
 }

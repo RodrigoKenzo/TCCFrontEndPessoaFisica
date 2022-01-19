@@ -1,14 +1,13 @@
 import * as React from 'react'
 import { Link } from 'gatsby'
 import Header from '../components/Header'
-import Steps from '../components/Steps'
 import { noLink, textCentered, roundButton, textTopCentered } from '../styles/index.module.scss'
 
 const HomePage = () => {
   return (
     <main>
       <Header 
-        pageTitle='Site Home' 
+        pageTitle='Inicio' 
       />
 
       {/*
@@ -37,7 +36,6 @@ const HomePage = () => {
       {/*Colocar highlight em qual etapa o usuário se encontra*/}
 
 
-      <Steps />
     </main>
   )
 }
