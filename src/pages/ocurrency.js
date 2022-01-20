@@ -88,7 +88,24 @@ const Ocurrency = () => {
             <div className={row}>
               <input type="text" style={{width: "60%", margin: "auto"}} placeholder="Nº vítimas Ex.: 1" />
             </div>
-          </div>       
+          </div>    
+          <ComboBox
+              options={urgencyType}
+              placeholder="Escolha uma opção"
+              defaultIndex={4}
+              optionsListMaxHeight={150}
+              style={{
+              width: "60%",
+              margin: "0 auto",
+              color: "black"
+              }}
+              focusColor="#20C374"
+              renderOptions={(option) => (
+              <div className="comboBoxOption">{option}</div>
+              )}
+              onChange={(event) => console.log(event.target.value)}
+              enableAutocomplete
+            />   
           <div className={lastRow}>
             <button className={buttonBack} type="button"><Link className={noLink} to="/">Voltar</Link></button>
             <button className={buttonRegister} type="button"><Link className={noLink} to="/address">Prosseguir</Link></button>
