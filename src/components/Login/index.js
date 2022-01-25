@@ -2,7 +2,7 @@ import * as React from "react";
 import { Link } from "gatsby";
 import { useForm } from "react-hook-form";
 import "./styles.scss";
-import { login } from "../../services/login.service";
+import { loginHandler } from "../../services/login.service";
 import {
   container,
   textCentered,
@@ -11,14 +11,15 @@ import {
   registerLink,
   row,
   rowButton,
-  //buttonBack,
+  // buttonBack,
   textLeft,
   buttonRegister,
 } from "../../styles/register.module.scss";
 
+// eslint-disable-next-line react/prop-types
 const Login = ({ pageTitle }) => {
   const { register, handleSubmit } = useForm();
-  const onSubmit = (data) => login(data);
+  const onSubmit = (data) => loginHandler(data);
 
   return (
     <main>
@@ -47,7 +48,7 @@ const Login = ({ pageTitle }) => {
               </div>
               <hr />
               <div className={rowButton}>
-                {/*<button className={buttonBack} type="submit">
+                {/* <button className={buttonBack} type="submit">
                   <Link className={noLink} to="/register">
                     Registrar
                   </Link>

@@ -13,7 +13,7 @@ const Address = () => {
     <main>
 
       <Header 
-        pageTitle='Site Home' 
+        pageTitle='Adress' 
       >
         
       </Header>
