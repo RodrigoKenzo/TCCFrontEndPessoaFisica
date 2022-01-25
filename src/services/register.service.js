@@ -3,7 +3,7 @@ import { myHeaders } from "../utils/requestHeaders";
 
 const newRegister = async (register) => {
 
-  var DateTime = new Date()
+  const DateTime = new Date()
   
   const url = "http://127.0.0.1:5000/api/PessoasFisicas";
   const data = {

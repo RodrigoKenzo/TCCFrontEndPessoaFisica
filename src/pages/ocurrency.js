@@ -21,17 +21,10 @@ import {
 const Ocurrency = () => {
 
   const ocurrencyType = [
-    "Acidente de trânsito",
+    "Trânsito",
     "Crime",
     "Desavença Civil",
     "Desastres Naturais"
-  ]
-
-  const urgencyType = [
-    "Urgente",
-    "Alto",
-    "Médio",
-    "Baixo"
   ]
 
   return (
