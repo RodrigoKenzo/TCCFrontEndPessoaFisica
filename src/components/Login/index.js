@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useState } from "react";
 import { Link } from "gatsby";
 import { useForm } from "react-hook-form";
 import "./styles.scss";
@@ -16,13 +16,24 @@ import {
   buttonRegister,
 } from "../../styles/register.module.scss";
 
+import { loginContext } from '../../contexts/loginContext'
+
 // eslint-disable-next-line react/prop-types
-const Login = ({ pageTitle }) => {
+const Login = ({ pageTitle, Login, error }) => {
   const { register, handleSubmit } = useForm();
-  const onSubmit = (data) => loginHandler(data);
+  /*const onSubmit = (data) => loginHandler(data);*/
+  const onSubmit = (data) => loginContext(data);
+
+  const [details, setDetails] = useState({email: "", password: ""})
+
+  const submitHandler = e => {
+    e.preventDefault()
+
+    Login(details)
+  }
 
   return (
-    <main>
+    /*<main>
       <div className={backgroundImage}>
         <title>{pageTitle}</title>
         <div className={container}>
@@ -52,7 +63,7 @@ const Login = ({ pageTitle }) => {
                   <Link className={noLink} to="/register">
                     Registrar
                   </Link>
-                </button>*/}
+                </button>*//*}
                 <input
                   className={buttonRegister}
                   type="submit"
@@ -69,7 +80,22 @@ const Login = ({ pageTitle }) => {
           </div>
         </div>
       </div>
-    </main>
+    </main>*/
+    <form onSubmit={submitHandler}>
+      <div className="form-inner">
+        <h2>Login</h2>
+        {/* ERROR */}
+        <div className="form-group">
+          <label htmlFor="email">Email: </label>
+          <input type="email" name="email" id="email" onChange={ e => setDetails({...details, email: e.target.value})} value={details.email} />
+        </div>
+        <div className="form-group">
+          <label htmlFor="password">Senha: </label>
+          <input type="password" name="password" id="password" onChange={ e => setDetails({...details, password: e.target.value})} value={details.password} />
+        </div>
+        <input type="submit" value="LOGIN" />
+      </div>
+    </form>
   );
 };
 

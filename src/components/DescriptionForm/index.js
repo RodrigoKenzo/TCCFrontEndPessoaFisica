@@ -1,23 +1,16 @@
-/*import * as React from 'react'
+import * as React from 'react'
 import { Link } from 'gatsby'
-import Header from '../components/Header'
+import Header from '../Header'
 import "react-responsive-combo-box/dist/index.css";
 import {
   buttonBack,
   buttonRegister
-} from '../styles/register.module.scss'
-import { noLink, textCentered, textTopCentered, row, lastRow } from '../styles/details.module.scss'
+} from '../../styles/register.module.scss'
+import { noLink, textCentered, textTopCentered, row, lastRow } from '../../styles/details.module.scss'
 
 const Details = () => {
   return (
     <main>
-
-      <Header 
-        pageTitle='Details' 
-      >
-        
-      </Header>
-      
       <React.Fragment>
         <div className={textCentered}>
           <div className={textTopCentered}>
@@ -36,4 +29,4 @@ const Details = () => {
   )
 }
 
-export default Details*/
+export default Details

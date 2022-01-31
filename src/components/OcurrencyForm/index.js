@@ -1,12 +1,12 @@
-/*import * as React from 'react'
+import * as React from 'react'
 import { Link } from 'gatsby'
-import Header from '../components/Header'
+import Header from '../Header'
 import ComboBox from "react-responsive-combo-box";
 import "react-responsive-combo-box/dist/index.css";
 import {
   buttonBack,
   buttonRegister
-} from '../styles/register.module.scss'
+} from '../../styles/register.module.scss'
 import { 
   noLink,
   textCentered,
@@ -16,9 +16,9 @@ import {
   buttonSim,
   buttonNao,
   ocurrencyContainer
-} from '../styles/ocurrency.module.scss'
+} from '../../styles/ocurrency.module.scss'
 
-const Ocurrency = () => {
+const OcurrencyForm = () => {
 
   const ocurrencyType = [
     "Trânsito",
@@ -36,12 +36,6 @@ const Ocurrency = () => {
 
   return (
     <main>
-
-      <Header 
-        pageTitle='Site Home' 
-      >
-      </Header>
-      
       <div>
         <div className={textCentered}>
           <div className={textTopCentered}>
@@ -116,4 +110,4 @@ const Ocurrency = () => {
   )
 }
 
-export default Ocurrency*/
+export default OcurrencyForm

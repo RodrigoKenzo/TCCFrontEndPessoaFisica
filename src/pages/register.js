@@ -20,7 +20,6 @@ const RegistrationPage = ({ pageTitle }) => {
   const onSubmit = (data) => newRegister(data);
   
   return (
-    //Deixar scroll só nos inputs
     <main>
       <div className={backgroundImage}>
         <title>{pageTitle}</title>

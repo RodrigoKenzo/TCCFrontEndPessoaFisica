@@ -1,23 +1,16 @@
-/*import * as React from 'react'
+import * as React from 'react'
 import { Link } from 'gatsby'
-import Header from '../components/Header'
+import Header from '../Header'
 import "react-responsive-combo-box/dist/index.css";
 import {
   buttonBack,
   buttonRegister
-} from '../styles/register.module.scss'
-import { noLink, textCentered, textTopCentered, row, lastRow } from '../styles/address.module.scss'
+} from '../../styles/register.module.scss'
+import { noLink, textCentered, textTopCentered, row, lastRow } from '../../styles/address.module.scss'
 
 const Address = () => {
   return (
     <main>
-
-      <Header 
-        pageTitle='Adress' 
-      >
-        
-      </Header>
-      
       <div>
         <div className={textCentered}>
           <div className={textTopCentered}>
@@ -57,4 +50,4 @@ const Address = () => {
   )
 }
 
-export default Address*/
+export default Address
