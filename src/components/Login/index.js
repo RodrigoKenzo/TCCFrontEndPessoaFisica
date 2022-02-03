@@ -3,6 +3,7 @@ import { Link } from "gatsby";
 import { useForm } from "react-hook-form";
 import "./styles.scss";
 import { loginHandler } from "../../services/login.service";
+import { navigate } from "gatsby"
 import {
   container,
   textCentered,
@@ -16,26 +17,24 @@ import {
   buttonRegister,
 } from "../../styles/register.module.scss";
 
-import { loginContext } from '../../contexts/loginContext'
+import { useLogin } from '../../contexts/loginContext'
 
 // eslint-disable-next-line react/prop-types
-const Login = ({ pageTitle, Login, error }) => {
+const Login = () => {
   const { register, handleSubmit } = useForm();
-  /*const onSubmit = (data) => loginHandler(data);*/
-  const onSubmit = (data) => loginContext(data);
+  const { login } = useLogin()
+
+  const onSubmit = (data) => {
+    login(data)
+    navigate('/app/ocurrency')
+  };
 
   const [details, setDetails] = useState({email: "", password: ""})
 
-  const submitHandler = e => {
-    e.preventDefault()
-
-    Login(details)
-  }
-
   return (
-    /*<main>
+    <main>
       <div className={backgroundImage}>
-        <title>{pageTitle}</title>
+        <title>Login</title>
         <div className={container}>
           <div className={textCentered}>
             <p style={{ fontSize: "16px" }}>Login</p>
@@ -59,11 +58,6 @@ const Login = ({ pageTitle, Login, error }) => {
               </div>
               <hr />
               <div className={rowButton}>
-                {/* <button className={buttonBack} type="submit">
-                  <Link className={noLink} to="/register">
-                    Registrar
-                  </Link>
-                </button>*//*}
                 <input
                   className={buttonRegister}
                   type="submit"
@@ -80,22 +74,7 @@ const Login = ({ pageTitle, Login, error }) => {
           </div>
         </div>
       </div>
-    </main>*/
-    <form onSubmit={submitHandler}>
-      <div className="form-inner">
-        <h2>Login</h2>
-        {/* ERROR */}
-        <div className="form-group">
-          <label htmlFor="email">Email: </label>
-          <input type="email" name="email" id="email" onChange={ e => setDetails({...details, email: e.target.value})} value={details.email} />
-        </div>
-        <div className="form-group">
-          <label htmlFor="password">Senha: </label>
-          <input type="password" name="password" id="password" onChange={ e => setDetails({...details, password: e.target.value})} value={details.password} />
-        </div>
-        <input type="submit" value="LOGIN" />
-      </div>
-    </form>
+    </main>
   );
 };
 

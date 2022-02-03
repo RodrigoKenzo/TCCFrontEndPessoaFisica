@@ -1,11 +1,13 @@
-import { React, createContext, useContext, useState } from "react"
+import React, { createContext, useContext, useState } from "react"
 
-export const loginContext = createContext(loginContext)
+export const loginContext = createContext({})
 
-export function LoginContextProvider() {
+export function LoginContextProvider({ children }) {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
+  const [user, setUser] = useState()
 
-  function login() {
+  function login(data) {
+    console.log('data', data)
     setIsLoggedIn(true)
   }
 
@@ -14,14 +16,15 @@ export function LoginContextProvider() {
   }
 
   return (
-    <LoginContext.Provider
+    <loginContext.Provider
       value={{
         login,
-        logout
+        logout,
+        isLoggedIn
       }}
     >
       {children}
-    </LoginContext.Provider>
+    </loginContext.Provider>
   )
 }
 

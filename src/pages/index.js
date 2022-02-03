@@ -1,4 +1,6 @@
 import React, { useState, useContext } from 'react'
+import { Router } from "@reach/router"
+
 import Header from '../components/Header'
 import UserNotFound from '../components/UserNotFound'
 import Ocurrency from '../components/Ocurrency'
@@ -6,7 +8,11 @@ import OcurrencyForm from '../components/OcurrencyForm'
 import LocalizationForm from '../components/LocalizationForm'
 import DescriptionForm from '../components/DescriptionForm'
 import ClosingForm from '../components/ClosingForm'
-import { loginContext } from '../contexts/loginContext'
+import Login from '../components/Login'
+import PrivateRoute from '../components/PrivateRoute'
+
+
+import { loginContext, LoginContextProvider, useLogin } from '../contexts/loginContext'
 
 const HomePage = () => {
 
@@ -53,45 +59,22 @@ const HomePage = () => {
     }
   }
 
-  const isLoggedIn = useContext(loginContext)
-  
-  const user = {
-    email: "rodrigo@gmail.com",
-    password: "123"
-  }
-
-  const [userLogin, setUser] = useState({email: "", password: ""})
-  const [error, setError] = useState("")
-
-  const Login = details => {
-    console.log(details)
-
-    if(details.email === user.email && details.password === user.password) {
-      console.log("Logged in")
-      setUser({
-        email: details.email,
-      })
-    } else {
-      console.log("Details do not match")
-    }
-  }
-
-  const Logout = () => {
-    console.log("Logout")
-  }
-
-
+  console.log('isLoggedIn', isLoggedIn)
+  const { isLoggedIn } = useLogin()
   return (
     <main>
-      <Header 
-        pageTitle='Inicio' 
-      />
-      
-      <button onClick={previousPage}>Back</button>
-      <button onClick={nextPage}>Next</button>
-
-      {isLoggedIn? <div>{page}</div> : <UserNotFound />}
-
+      <LoginContextProvider>
+        <Header 
+          pageTitle='Inicio' 
+        />
+        
+          {/* {isLoggedIn? <div>{page}</div> : <UserNotFound />} */}
+        <Router>
+          <PrivateRoute path="/app/ocurrency" component={Ocurrency} />
+          <PrivateRoute path="/app/ocurrency-form" component={OcurrencyForm} />
+          <Login path="/app/login" />
+        </Router>
+      </LoginContextProvider>
     </main>
   )
 }
