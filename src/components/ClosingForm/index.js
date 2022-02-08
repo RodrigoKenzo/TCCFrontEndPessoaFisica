@@ -33,7 +33,7 @@ const Instructions = () => {
             </div>
           </div>
           <div className={lastRow}>
-            <button className={buttonBack} type="button"><Link className={noLink} to="/details">Voltar</Link></button>
+            <button className={buttonBack} type="button"><Link className={noLink} to="/app/description-form">Voltar</Link></button>
             <button className={buttonRegister} type="button"><Link className={noLink} to="/">Finalizar</Link></button>
           </div>
         </div>

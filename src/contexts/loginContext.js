@@ -8,7 +8,7 @@ export function LoginContextProvider({ children }) {
 
   function login(data) {
     console.log('data', data)
-    setIsLoggedIn(true)
+    if(data.username === "rodrigo@gmail.com" && data.password === "123") setIsLoggedIn(true)
   }
 
   function logout() {

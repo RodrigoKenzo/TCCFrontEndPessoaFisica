@@ -72,6 +72,9 @@ const HomePage = () => {
         <Router>
           <PrivateRoute path="/app/ocurrency" component={Ocurrency} />
           <PrivateRoute path="/app/ocurrency-form" component={OcurrencyForm} />
+          <PrivateRoute path="/app/localization-form" component={LocalizationForm} />
+          <PrivateRoute path="/app/description-form" component={DescriptionForm} />
+          <PrivateRoute path="/app/closing-form" component={ClosingForm} />
           <Login path="/app/login" />
         </Router>
       </LoginContextProvider>

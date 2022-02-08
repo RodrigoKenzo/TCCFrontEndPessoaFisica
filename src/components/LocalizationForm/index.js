@@ -41,8 +41,8 @@ const Address = () => {
               <input type="text" style={{width: "70%", margin: "auto", marginBottom: "20px"}} placeholder="Ex.: Bairro da limonada" />
             </div>
           <div className={lastRow}>
-            <button className={buttonBack} type="button"><Link className={noLink} to="/ocurrency">Voltar</Link></button>
-            <button className={buttonRegister} type="button"><Link className={noLink} to="/details">Não é Necessário</Link></button>
+            <button className={buttonBack} type="button"><Link className={noLink} to="/app/ocurrency-form">Voltar</Link></button>
+            <button className={buttonRegister} type="button"><Link className={noLink} to="/app/description-form">Não é Necessário</Link></button>
           </div>
         </div>
       </div>

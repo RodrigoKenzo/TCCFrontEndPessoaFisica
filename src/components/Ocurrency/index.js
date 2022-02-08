@@ -9,7 +9,7 @@ const Ocurrency = () => {
         <h1>Ferramenta de Auxílio para Emergências Civis</h1>
         <p>Descreva sua ocorrência</p>
       </div>
-      <Link className={noLink} to="/ocurrency">
+      <Link className={noLink} to="/app/ocurrency-form">
         <div className={roundButton}>
           Iniciar
         </div>

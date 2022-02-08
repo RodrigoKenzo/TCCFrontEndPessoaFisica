@@ -102,7 +102,7 @@ const OcurrencyForm = () => {
             />   
           <div className={lastRow}>
             <button className={buttonBack} type="button"><Link className={noLink} to="/">Voltar</Link></button>
-            <button className={buttonRegister} type="button"><Link className={noLink} to="/address">Prosseguir</Link></button>
+            <button className={buttonRegister} type="button"><Link className={noLink} to="/app/localization-form">Prosseguir</Link></button>
           </div>
         </div>
       </div>
