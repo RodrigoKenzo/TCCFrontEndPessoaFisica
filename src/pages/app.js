@@ -12,7 +12,7 @@ import Login from '../components/Login'
 import PrivateRoute from '../components/PrivateRoute'
 
 
-import { loginContext, LoginContextProvider, useLogin } from '../contexts/loginContext'
+import { loginContext, LoginContextProvider, useLogin, isLoggedIn } from '../contexts/loginContext'
 
 const App = () => {
   return (
@@ -25,8 +25,13 @@ const App = () => {
         <Router basepath="/app">
           <PrivateRoute path="/ocurrency" component={Ocurrency} />
           <PrivateRoute path="/ocurrency-form" component={OcurrencyForm} />
-          <UserNotFound path="/" />
+          <PrivateRoute path="/localization-form" component={LocalizationForm} />
+          <PrivateRoute path="/description-form" component={DescriptionForm} />
+          <PrivateRoute path="/closing-form" component={ClosingForm} />
         </Router>
+        {!isLoggedIn &&
+            <UserNotFound />
+        }
       </LoginContextProvider>
     </main>
   )

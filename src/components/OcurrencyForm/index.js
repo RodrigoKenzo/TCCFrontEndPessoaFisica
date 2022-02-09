@@ -101,7 +101,7 @@ const OcurrencyForm = () => {
               enableAutocomplete
             />   
           <div className={lastRow}>
-            <button className={buttonBack} type="button"><Link className={noLink} to="/">Voltar</Link></button>
+            <button className={buttonBack} type="button"><Link className={noLink} to="/app/ocurrency">Voltar</Link></button>
             <button className={buttonRegister} type="button"><Link className={noLink} to="/app/localization-form">Prosseguir</Link></button>
           </div>
         </div>

@@ -34,7 +34,7 @@ const Instructions = () => {
           </div>
           <div className={lastRow}>
             <button className={buttonBack} type="button"><Link className={noLink} to="/app/description-form">Voltar</Link></button>
-            <button className={buttonRegister} type="button"><Link className={noLink} to="/">Finalizar</Link></button>
+            <button className={buttonRegister} type="button"><Link className={noLink} to="/app">Finalizar</Link></button>
           </div>
         </div>
       </React.Fragment>
