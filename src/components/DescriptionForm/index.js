@@ -20,8 +20,8 @@ const Details = () => {
             <textarea type="text" style={{width: "70%", margin: "auto", marginBottom: "20px", height: "40vh", resize: "none"}} placeholder="Mais detalhes..." />
           </div>
           <div className={lastRow}>
-            <button className={buttonBack} type="button"><Link className={noLink} to="/app/address">Voltar</Link></button>
-            <button className={buttonRegister} type="button"><Link className={noLink} to="/app/instructions">Não é Necessário</Link></button>
+            <button className={buttonBack} type="button"><Link className={noLink} to="/app/localization-form">Voltar</Link></button>
+            <button className={buttonRegister} type="button"><Link className={noLink} to="/app/closing-form">Não é Necessário</Link></button>
           </div>
         </div>
       </React.Fragment>

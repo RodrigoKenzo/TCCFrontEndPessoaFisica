@@ -13,12 +13,20 @@ import {
   textTopCentered,
   row,
   lastRow,
+  rowButton,
   buttonSim,
   buttonNao,
   ocurrencyContainer
 } from '../../styles/ocurrency.module.scss'
+import { useForm } from "react-hook-form";
 
 const OcurrencyForm = () => {
+
+  const { register, handleSubmit } = useForm();
+  const onSubmit = (data) => {
+    console.log("a")
+    newRegister(data)
+  }
 
   const ocurrencyType = [
     "Trânsito",
@@ -41,69 +49,96 @@ const OcurrencyForm = () => {
           <div className={textTopCentered}>
             <h1>Efetuar Ocorrência</h1>
           </div>
-          <div className={ocurrencyContainer}>
-            <p>Tipo de Ocorrência</p>
+          <form onSubmit={handleSubmit(onSubmit)}>
+            <div className={ocurrencyContainer}>
+              <p>Tipo de Ocorrência</p>
+              <ComboBox
+                options={ocurrencyType}
+                placeholder="Escolha uma opção"
+                defaultIndex={4}
+                optionsListMaxHeight={150}
+                style={{
+                width: "60%",
+                margin: "0 auto",
+                color: "black"
+                }}
+                focusColor="#20C374"
+                renderOptions={(option) => (
+                <div className="comboBoxOption">{option}</div>
+                )}
+                onChange={(event) => console.log(event.target.value)}
+                enableAutocomplete
+                {...register("OcurrencyType", {required:true, maxLength:20})}
+              />
+              <p>Quantos envolvidos?</p>
+              <div className={row}>
+                <input 
+                  type="text" 
+                  style={{width: "60%", margin: "auto"}} 
+                  placeholder="Nº envolvidos Ex.: 3" 
+                />
+              </div>
+              <p>Houve vítimas?</p>
+              <div className={row}>
+                <button className={buttonSim} type="button"><Link className={noLink}>Sim</Link></button>
+                <button className={buttonNao} type="button"><Link className={noLink}>Não</Link></button>
+              </div>
+              <p>Quantas vítimas?</p>
+              <div className={row}>
+                <input 
+                  type="text" 
+                  style={{width: "60%", margin: "auto"}} 
+                  placeholder="Nº vítimas Ex.: 1"
+                  {...register("Victims", {required:true, maxLength:20})}
+                />
+              </div>
+              <p>Houve feridos?</p>
+              <div className={row}>
+                <button className={buttonSim} type="button"><Link className={noLink}>Sim</Link></button>
+                <button className={buttonNao} type="button"><Link className={noLink}>Não</Link></button>
+              </div>
+              <p>Quantos feridos?</p>
+              <div className={row}>
+                <input 
+                  type="text" 
+                  style={{width: "60%", margin: "auto"}} 
+                  placeholder="Nº vítimas Ex.: 1"
+                  {...register("userName", {required:true, maxLength:20})}
+                />
+              </div>
+            </div>    
             <ComboBox
-              options={ocurrencyType}
-              placeholder="Escolha uma opção"
-              defaultIndex={4}
-              optionsListMaxHeight={150}
-              style={{
-              width: "60%",
-              margin: "0 auto",
-              color: "black"
-              }}
-              focusColor="#20C374"
-              renderOptions={(option) => (
-              <div className="comboBoxOption">{option}</div>
-              )}
-              onChange={(event) => console.log(event.target.value)}
-              enableAutocomplete
-            />
-            <p>Quantos envolvidos?</p>
-            <div className={row}>
-              <input type="text" style={{width: "60%", margin: "auto"}} placeholder="Nº envolvidos Ex.: 3" />
+                options={urgencyType}
+                placeholder="Escolha uma opção"
+                defaultIndex={4}
+                optionsListMaxHeight={150}
+                style={{
+                width: "60%",
+                margin: "0 auto",
+                color: "black"
+                }}
+                focusColor="#20C374"
+                renderOptions={(option) => (
+                <div className="comboBoxOption">{option}</div>
+                )}
+                onChange={(event) => console.log(event.target.value)}
+                enableAutocomplete
+              />   
+            <div className={lastRow}>
+              <button className={buttonBack} type="button"><Link className={noLink} to="/app/ocurrency">Voltar</Link></button>
+              <div className={rowButton}>
+                <button
+                  className={buttonRegister}
+                  type="submit"
+                  value="Entrar"
+                >
+                  <Link className={noLink} to="/app/localization-form">
+                    Próximo
+                  </Link>
+                </button>
+              </div>
             </div>
-            <p>Houve vítimas?</p>
-            <div className={row}>
-              <button className={buttonSim} type="button"><Link className={noLink}>Sim</Link></button>
-              <button className={buttonNao} type="button"><Link className={noLink}>Não</Link></button>
-            </div>
-            <p>Quantas vítimas?</p>
-            <div className={row}>
-              <input type="text" style={{width: "60%", margin: "auto"}} placeholder="Nº vítimas Ex.: 1" />
-            </div>
-            <p>Houve feridos?</p>
-            <div className={row}>
-              <button className={buttonSim} type="button"><Link className={noLink}>Sim</Link></button>
-              <button className={buttonNao} type="button"><Link className={noLink}>Não</Link></button>
-            </div>
-            <p>Quantos feridos?</p>
-            <div className={row}>
-              <input type="text" style={{width: "60%", margin: "auto"}} placeholder="Nº vítimas Ex.: 1" />
-            </div>
-          </div>    
-          <ComboBox
-              options={urgencyType}
-              placeholder="Escolha uma opção"
-              defaultIndex={4}
-              optionsListMaxHeight={150}
-              style={{
-              width: "60%",
-              margin: "0 auto",
-              color: "black"
-              }}
-              focusColor="#20C374"
-              renderOptions={(option) => (
-              <div className="comboBoxOption">{option}</div>
-              )}
-              onChange={(event) => console.log(event.target.value)}
-              enableAutocomplete
-            />   
-          <div className={lastRow}>
-            <button className={buttonBack} type="button"><Link className={noLink} to="/app/ocurrency">Voltar</Link></button>
-            <button className={buttonRegister} type="button"><Link className={noLink} to="/app/localization-form">Prosseguir</Link></button>
-          </div>
+          </form>
         </div>
       </div>
     </main>
