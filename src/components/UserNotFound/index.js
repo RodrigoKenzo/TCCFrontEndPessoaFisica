@@ -1,8 +1,6 @@
 import React from 'react';
-import Login from '../Login'
-import Modal from '../Modal'
-import { Link } from 'gatsby'
 import { useLogin } from '../../contexts/loginContext';
+import './styles.scss'
 
 const UserNotFound = () => {
 
@@ -14,14 +12,6 @@ const UserNotFound = () => {
         <span className="user-not-found__text">
           <p>Faça login para continuar</p>
         </span>
-        <div className="user-not-found__button-wrapper">
-          <div className="user-not-found__button">
-            <Modal content={<Login />}/>
-          </div>
-          <div className="user-not-found__button">
-            <Link type="submit" to="/register"></Link>
-          </div>
-        </div>
       </div>
     )
   } else {
