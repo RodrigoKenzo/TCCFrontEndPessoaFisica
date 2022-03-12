@@ -24,8 +24,7 @@ const OcurrencyForm = () => {
 
   const { register, handleSubmit } = useForm();
   const onSubmit = (data) => {
-    console.log("a")
-    newRegister(data)
+    console.log(data)
   }
 
   const ocurrencyType = [
@@ -49,7 +48,14 @@ const OcurrencyForm = () => {
           <div className={textTopCentered}>
             <h1>Efetuar Ocorrência</h1>
           </div>
-          <form onSubmit={handleSubmit(onSubmit)}>
+          <form onSubmit={(e) => {
+            console.log('a')
+            try {
+              handleSubmit(onSubmit)
+            } catch (e) {
+              console.log(e)
+            }
+          }}>
             <div className={ocurrencyContainer}>
               <p>Tipo de Ocorrência</p>
               <ComboBox
@@ -68,7 +74,6 @@ const OcurrencyForm = () => {
                 )}
                 onChange={(event) => console.log(event.target.value)}
                 enableAutocomplete
-                {...register("OcurrencyType", {required:true, maxLength:20})}
               />
               <p>Quantos envolvidos?</p>
               <div className={row}>
@@ -80,8 +85,8 @@ const OcurrencyForm = () => {
               </div>
               <p>Houve vítimas?</p>
               <div className={row}>
-                <button className={buttonSim} type="button"><Link className={noLink}>Sim</Link></button>
-                <button className={buttonNao} type="button"><Link className={noLink}>Não</Link></button>
+                <button className={buttonSim} type="button">Sim</button>
+                <button className={buttonNao} type="button">Não</button>
               </div>
               <p>Quantas vítimas?</p>
               <div className={row}>
@@ -89,13 +94,13 @@ const OcurrencyForm = () => {
                   type="text" 
                   style={{width: "60%", margin: "auto"}} 
                   placeholder="Nº vítimas Ex.: 1"
-                  {...register("Victims", {required:true, maxLength:20})}
+                  {...register("victims", {required:true, maxLength:20})}
                 />
               </div>
               <p>Houve feridos?</p>
               <div className={row}>
-                <button className={buttonSim} type="button"><Link className={noLink}>Sim</Link></button>
-                <button className={buttonNao} type="button"><Link className={noLink}>Não</Link></button>
+                <button className={buttonSim} type="button">Sim</button>
+                <button className={buttonNao} type="button">Não</button>
               </div>
               <p>Quantos feridos?</p>
               <div className={row}>
@@ -108,34 +113,30 @@ const OcurrencyForm = () => {
               </div>
             </div>    
             <ComboBox
-                options={urgencyType}
-                placeholder="Escolha uma opção"
-                defaultIndex={4}
-                optionsListMaxHeight={150}
-                style={{
-                width: "60%",
-                margin: "0 auto",
-                color: "black"
-                }}
-                focusColor="#20C374"
-                renderOptions={(option) => (
-                <div className="comboBoxOption">{option}</div>
-                )}
-                onChange={(event) => console.log(event.target.value)}
-                enableAutocomplete
-              />   
+              options={urgencyType}
+              placeholder="Escolha uma opção"
+              defaultIndex={4}
+              optionsListMaxHeight={150}
+              style={{
+              width: "60%",
+              margin: "0 auto",
+              color: "black"
+              }}
+              focusColor="#20C374"
+              renderOptions={(option) => (
+              <div className="comboBoxOption">{option}</div>
+              )}
+              onChange={(event) => console.log(event.target.value)}
+              enableAutocomplete
+            />   
             <div className={lastRow}>
               <button className={buttonBack} type="button"><Link className={noLink} to="/app/ocurrency">Voltar</Link></button>
               <div className={rowButton}>
-                <button
+                <input
                   className={buttonRegister}
                   type="submit"
-                  value="Entrar"
-                >
-                  <Link className={noLink} to="/app/localization-form">
-                    Próximo
-                  </Link>
-                </button>
+                  value="Próximo"
+                />
               </div>
             </div>
           </form>
