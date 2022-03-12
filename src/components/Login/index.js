@@ -29,8 +29,6 @@ const Login = () => {
     navigate('/app/ocurrency')
   };
 
-  const [details, setDetails] = useState({email: "", password: ""})
-
   return (
     <main>
       <div className={backgroundImage}>

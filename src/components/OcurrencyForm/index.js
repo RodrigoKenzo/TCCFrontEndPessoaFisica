@@ -1,7 +1,5 @@
 import * as React from 'react'
 import { Link } from 'gatsby'
-import Header from '../Header'
-import ComboBox from "react-responsive-combo-box";
 import "react-responsive-combo-box/dist/index.css";
 import {
   buttonBack,
@@ -14,32 +12,19 @@ import {
   row,
   lastRow,
   rowButton,
-  buttonSim,
-  buttonNao,
-  ocurrencyContainer
+  ocurrencyContainer,
+  combobox
 } from '../../styles/ocurrency.module.scss'
 import { useForm } from "react-hook-form";
+import { navigate } from "gatsby"
 
 const OcurrencyForm = () => {
 
   const { register, handleSubmit } = useForm();
   const onSubmit = (data) => {
     console.log(data)
+    navigate('/app/localization-form')
   }
-
-  const ocurrencyType = [
-    "Trânsito",
-    "Crime",
-    "Desavença Civil",
-    "Desastres Naturais"
-  ]
-
-  const urgencyType = [
-    "Urgente",
-    "Alto",
-    "Médio",
-    "Baixo"
-  ]
 
   return (
     <main>
@@ -58,35 +43,23 @@ const OcurrencyForm = () => {
           }}>
             <div className={ocurrencyContainer}>
               <p>Tipo de Ocorrência</p>
-              <ComboBox
-                options={ocurrencyType}
-                placeholder="Escolha uma opção"
-                defaultIndex={4}
-                optionsListMaxHeight={150}
-                style={{
-                width: "60%",
-                margin: "0 auto",
-                color: "black"
-                }}
-                focusColor="#20C374"
-                renderOptions={(option) => (
-                <div className="comboBoxOption">{option}</div>
-                )}
-                onChange={(event) => console.log(event.target.value)}
-                enableAutocomplete
-              />
+              <select
+                className={combobox}
+                {...register("OcurrencyType", {required:true, maxLength:20})}
+              >
+                <option value="transito">Trânsito</option>
+                <option value="crime">Crime</option>
+                <option value="desavencaCivil">Desavença Civil</option>
+                <option value="desastresNaturais">Desastres Naturais</option>
+              </select>
               <p>Quantos envolvidos?</p>
               <div className={row}>
                 <input 
                   type="text" 
                   style={{width: "60%", margin: "auto"}} 
                   placeholder="Nº envolvidos Ex.: 3" 
+                  {...register("ManyInvolved", {required:true, maxLength:20})}
                 />
-              </div>
-              <p>Houve vítimas?</p>
-              <div className={row}>
-                <button className={buttonSim} type="button">Sim</button>
-                <button className={buttonNao} type="button">Não</button>
               </div>
               <p>Quantas vítimas?</p>
               <div className={row}>
@@ -97,46 +70,37 @@ const OcurrencyForm = () => {
                   {...register("victims", {required:true, maxLength:20})}
                 />
               </div>
-              <p>Houve feridos?</p>
-              <div className={row}>
-                <button className={buttonSim} type="button">Sim</button>
-                <button className={buttonNao} type="button">Não</button>
-              </div>
               <p>Quantos feridos?</p>
               <div className={row}>
                 <input 
                   type="text" 
-                  style={{width: "60%", margin: "auto"}} 
+                  style={{width: "60%"}} 
                   placeholder="Nº vítimas Ex.: 1"
                   {...register("userName", {required:true, maxLength:20})}
                 />
               </div>
             </div>    
-            <ComboBox
-              options={urgencyType}
-              placeholder="Escolha uma opção"
-              defaultIndex={4}
-              optionsListMaxHeight={150}
-              style={{
-              width: "60%",
-              margin: "0 auto",
-              color: "black"
-              }}
-              focusColor="#20C374"
-              renderOptions={(option) => (
-              <div className="comboBoxOption">{option}</div>
-              )}
-              onChange={(event) => console.log(event.target.value)}
-              enableAutocomplete
-            />   
+            <p>Nível de Urgência</p>
+            <select
+              className={combobox}
+              style={{marginBottom: '20px'}}
+              {...register("Urgency", {required:true, maxLength:20})}
+            >
+              <option value="transito">Urgente</option>
+              <option value="crime">Alto</option>
+              <option value="desavencaCivil">Médio</option>
+              <option value="desastresNaturais">Baixo</option>
+            </select>
             <div className={lastRow}>
               <button className={buttonBack} type="button"><Link className={noLink} to="/app/ocurrency">Voltar</Link></button>
               <div className={rowButton}>
-                <input
+                <button
                   className={buttonRegister}
                   type="submit"
-                  value="Próximo"
-                />
+                  value="Entrar"
+                >
+                    Próximo
+                </button>
               </div>
             </div>
           </form>

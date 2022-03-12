@@ -87,7 +87,7 @@ const RegistrationPage = ({ pageTitle }) => {
               <hr />
               <div className={rowButton}>
                 <button className={buttonBack} type="submit">
-                  <Link className={backLink} to="/">
+                  <Link className={backLink} to="/app">
                     Voltar
                   </Link>
                 </button>
