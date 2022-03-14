@@ -33,14 +33,7 @@ const OcurrencyForm = () => {
           <div className={textTopCentered}>
             <h1>Efetuar Ocorrência</h1>
           </div>
-          <form onSubmit={(e) => {
-            console.log('a')
-            try {
-              handleSubmit(onSubmit)
-            } catch (e) {
-              console.log(e)
-            }
-          }}>
+          <form onSubmit={handleSubmit(onSubmit)}>
             <div className={ocurrencyContainer}>
               <p>Tipo de Ocorrência</p>
               <select
