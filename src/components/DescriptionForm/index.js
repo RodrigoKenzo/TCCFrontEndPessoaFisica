@@ -31,7 +31,7 @@ const Details = () => {
               <h1>Deseja dar mais detalhes?</h1>
             </div>
             <div className={row}>
-              <textarea type="text" style={{width: "70%", margin: "auto", marginBottom: "20px", height: "40vh", resize: "none"}} placeholder="Mais detalhes..." {...register("Details", {required:true, maxLength:20})} />
+              <textarea type="text" style={{width: "70%", margin: "auto", marginBottom: "20px", height: "40vh", resize: "none"}} placeholder="Mais detalhes..." {...register("Details", {required:false, maxLength:20})} />
             </div>
             <div className={lastRow}>
               <button className={buttonBack} type="button"><Link className={noLink} to="/app/localization-form">Voltar</Link></button>
