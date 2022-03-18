@@ -20,7 +20,7 @@ const Address = () => {
       return {...prev, ...data }
     })
     console.log(formData)
-    navigate('/app/description-form')
+    navigate('/app/description-form') 
   }
 
   return (
