@@ -8,11 +8,11 @@ import OcurrencyForm from '../components/OcurrencyForm'
 import LocalizationForm from '../components/LocalizationForm'
 import DescriptionForm from '../components/DescriptionForm'
 import ClosingForm from '../components/ClosingForm'
-import Login from '../components/Login'
 import PrivateRoute from '../components/PrivateRoute'
 
 
-import { loginContext, LoginContextProvider, useLogin, isLoggedIn } from '../contexts/loginContext'
+import { LoginContextProvider, isLoggedIn } from '../contexts/loginContext'
+import { FormContextProvider } from '../contexts/formContext'
 
 const App = () => {
   return (
@@ -21,14 +21,16 @@ const App = () => {
         <Header 
           pageTitle='Inicio' 
         />
+        <FormContextProvider>
         
         <Router basepath="/app">
           <PrivateRoute path="/ocurrency" component={Ocurrency} />
-          <PrivateRoute path="/ocurrency-form" component={OcurrencyForm} />
-          <PrivateRoute path="/localization-form" component={LocalizationForm} />
-          <PrivateRoute path="/description-form" component={DescriptionForm} />
-          <PrivateRoute path="/closing-form" component={ClosingForm} />
+            <PrivateRoute path="/ocurrency-form" component={OcurrencyForm} />
+            <PrivateRoute path="/localization-form" component={LocalizationForm} />
+            <PrivateRoute path="/description-form" component={DescriptionForm} />
+            <PrivateRoute path="/closing-form" component={ClosingForm} />
         </Router>
+          </FormContextProvider>
         {!isLoggedIn &&
             <UserNotFound />
         }

@@ -1,24 +1,24 @@
-import { useContext } from "react"
+import React, { createContext, useContext, useState } from "react"
 
-const formData = {
-  OcurrencyType,
-  ManyInvolved,
-  Victims,
-  GenerationDate,
-  Latitude,
-  Longitude,
-  City,
-  State,
-  Adress,
-  Number,
-  Neighborhood,
-  Complement,
-  Details,
-  AnswerDate,
-  Dangerous,
-  Urgency
+export const formContext = createContext({})
+
+export function FormContextProvider({ children }) {
+
+  const [formData, setFormData] = useState()
+
+  return (
+    <formContext.Provider
+      value={{
+        formData,
+        setFormData
+      }}
+    >
+      {children}
+    </formContext.Provider>
+  )
 }
 
-export const useForm = () => {
-  return useContext(formData)
+export const useFormData = () => {
+  console.log('a')
+  return useContext(formContext)
 }

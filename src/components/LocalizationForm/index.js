@@ -1,6 +1,5 @@
 import * as React from 'react'
 import { Link } from 'gatsby'
-import Header from '../Header'
 import "react-responsive-combo-box/dist/index.css";
 import {
   buttonBack,
@@ -10,11 +9,17 @@ import { noLink, textCentered, textTopCentered, row, lastRow } from '../../style
 import { useForm } from "react-hook-form";
 import { navigate } from "gatsby"
 
+import { useFormData } from "../../contexts/formContext"
+
 const Address = () => {
 
   const { register, handleSubmit } = useForm();
+  const { formData, setFormData } = useFormData()
   const onSubmit = (data) => {
-    console.log(data)
+    setFormData(prev => {
+      return {...prev, ...data }
+    })
+    console.log(formData)
     navigate('/app/description-form')
   }
 
@@ -52,7 +57,7 @@ const Address = () => {
               </div>
             <div className={lastRow}>
               <button className={buttonBack} type="button"><Link className={noLink} to="/app/ocurrency-form">Voltar</Link></button>
-              <button className={buttonRegister} type="button">Não é Necessário</button>
+              <button className={buttonRegister} type="submit">Não é Necessário</button>
             </div>
           </div>
         </form>

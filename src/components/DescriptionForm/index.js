@@ -10,11 +10,15 @@ import { noLink, textCentered, textTopCentered, row, lastRow } from '../../style
 import { useForm } from "react-hook-form";
 import { navigate } from "gatsby"
 
+import { useFormData } from "../../contexts/formContext"
+
 const Details = () => {
 
   const { register, handleSubmit } = useForm();
+  const { formData } = useFormData()
+
   const onSubmit = (data) => {
-    console.log(data)
+    console.log('último' , formData)
     navigate('/app/closing-form')
   }
 
@@ -31,7 +35,7 @@ const Details = () => {
             </div>
             <div className={lastRow}>
               <button className={buttonBack} type="button"><Link className={noLink} to="/app/localization-form">Voltar</Link></button>
-              <button className={buttonRegister} type="button">Não é Necessário</button>
+              <button className={buttonRegister} type="submit">Não é Necessário</button>
             </div>
           </div>
         </form>

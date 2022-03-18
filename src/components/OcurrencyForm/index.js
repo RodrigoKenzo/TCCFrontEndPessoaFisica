@@ -1,6 +1,5 @@
 import * as React from 'react'
 import { Link } from 'gatsby'
-import "react-responsive-combo-box/dist/index.css";
 import {
   buttonBack,
   buttonRegister
@@ -17,12 +16,16 @@ import {
 } from '../../styles/ocurrency.module.scss'
 import { useForm } from "react-hook-form";
 import { navigate } from "gatsby"
+import { useFormData } from "../../contexts/formContext"
 
 const OcurrencyForm = () => {
 
   const { register, handleSubmit } = useForm();
+  const { setFormData } = useFormData()
+  
+
   const onSubmit = (data) => {
-    console.log(data)
+    setFormData(data)
     navigate('/app/localization-form')
   }
 
