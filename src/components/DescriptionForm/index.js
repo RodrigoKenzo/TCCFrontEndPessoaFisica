@@ -1,6 +1,5 @@
 import * as React from 'react'
 import { Link } from 'gatsby'
-import Header from '../Header'
 import "react-responsive-combo-box/dist/index.css";
 import {
   buttonBack,
@@ -15,11 +14,14 @@ import { useFormData } from "../../contexts/formContext"
 const Details = () => {
 
   const { register, handleSubmit } = useForm();
-  const { formData } = useFormData()
+  const { formData, setFormData } = useFormData()
 
   const onSubmit = (data) => {
-    console.log('último' , formData)
-    navigate('/app/closing-form')
+    setFormData(prev => {
+      return {...prev, ...data }
+    })
+    console.log('último' ,formData)
+    navigate('/app/closing-form') 
   }
 
   return (
