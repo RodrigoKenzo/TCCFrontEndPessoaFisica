@@ -10,7 +10,6 @@ import {
   textTopCentered,
   row,
   lastRow,
-  rowButton,
   ocurrencyContainer,
   combobox
 } from '../../styles/ocurrency.module.scss'
@@ -89,15 +88,13 @@ const OcurrencyForm = () => {
             </select>
             <div className={lastRow}>
               <button className={buttonBack} type="button"><Link className={noLink} to="/app/ocurrency">Voltar</Link></button>
-              <div className={rowButton}>
-                <button
-                  className={buttonRegister}
-                  type="submit"
-                  value="Entrar"
-                >
-                    Próximo
-                </button>
-              </div>
+              <button
+                className={buttonRegister}
+                type="submit"
+                value="Entrar"
+              >
+                  Próximo
+              </button>
             </div>
           </form>
         </div>

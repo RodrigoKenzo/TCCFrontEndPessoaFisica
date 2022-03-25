@@ -22,18 +22,14 @@ const App = () => {
           pageTitle='Inicio' 
         />
         <FormContextProvider>
-        
-        <Router basepath="/app">
-          <PrivateRoute path="/ocurrency" component={Ocurrency} />
+          <Router basepath="/app">
+            <PrivateRoute path="/ocurrency" component={Ocurrency} />
             <PrivateRoute path="/ocurrency-form" component={OcurrencyForm} />
             <PrivateRoute path="/localization-form" component={LocalizationForm} />
             <PrivateRoute path="/description-form" component={DescriptionForm} />
             <PrivateRoute path="/closing-form" component={ClosingForm} />
-        </Router>
-          </FormContextProvider>
-        {!isLoggedIn &&
-            <UserNotFound />
-        }
+          </Router>
+        </FormContextProvider>
       </LoginContextProvider>
     </main>
   )
