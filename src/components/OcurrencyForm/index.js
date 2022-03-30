@@ -81,10 +81,10 @@ const OcurrencyForm = () => {
               style={{marginBottom: '20px'}}
               {...register("Urgency", {required:true, maxLength:20})}
             >
-              <option value="transito">Urgente</option>
-              <option value="crime">Alto</option>
-              <option value="desavencaCivil">Médio</option>
-              <option value="desastresNaturais">Baixo</option>
+              <option value="urgent">Urgente</option>
+              <option value="high">Alto</option>
+              <option value="medium">Médio</option>
+              <option value="low">Baixo</option>
             </select>
             <div className={lastRow}>
               <button className={buttonBack} type="button"><Link className={noLink} to="/app/ocurrency">Voltar</Link></button>

@@ -7,6 +7,7 @@ import {
 } from '../../styles/register.module.scss'
 import { noLink, textCentered, textTopCentered, row } from '../../styles/details.module.scss'
 import { lastRow, ocurrencyStatus, status1, status2, status3 } from '../../styles/instructions.module.scss'
+import { useForm } from "react-hook-form";
 
 import newOcurrency from '../../services/ocurrency'
 
