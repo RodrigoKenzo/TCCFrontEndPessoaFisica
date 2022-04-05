@@ -1,8 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "gatsby";
 import { useForm } from "react-hook-form";
 import "./styles.scss";
-import { loginHandler } from "../../services/login.service";
 import { navigate } from "gatsby"
 import {
   container,
@@ -12,7 +11,6 @@ import {
   registerLink,
   row,
   rowButton,
-  // buttonBack,
   textLeft,
   buttonRegister,
 } from "../../styles/register.module.scss";
