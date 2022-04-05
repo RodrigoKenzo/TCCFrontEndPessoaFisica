@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const newRegister = async (register) => {
-  const DateTime = new Date();
+  const DateTime = new window.Date();
 
   const url = "http://127.0.0.1:5000/api/PessoasFisicas";
   const data = {
@@ -10,7 +10,7 @@ const newRegister = async (register) => {
     street: register.street,
     number: register.number,
     district: register.district,
-    dateCreation: DateTime.toJSON(),
+    dateCreation: String(DateTime),
     cpf: String(register.cpf),
     rg: register.rg,
     birthDate: register.birthDate,
