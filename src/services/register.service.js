@@ -1,3 +1,5 @@
+import axios from "axios";
+
 const newRegister = async (register) => {
   const DateTime = new Date();
 
@@ -16,17 +18,7 @@ const newRegister = async (register) => {
     password: register.password,
     email: register.email,
   };
-
-  console.log(JSON.stringify(data));
-
-  try {
-    await fetch(url, {
-      method: "post",
-      body: JSON.stringify(data),
-    }).then((response) => console.log(response));
-  } catch (error) {
-    console.log(error);
-  }
+  await axios.post(url, data);
 };
 
 export default newRegister;
