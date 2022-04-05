@@ -13,12 +13,10 @@ import {
   buttonRegister,
 } from "../styles/register.module.scss";
 
-import newRegister from '../services/register.service'
-
-const RegistrationPage = ({ pageTitle }) => {
+const RegistrationPage = ({}) => {
   const { register, handleSubmit } = useForm();
-  const onSubmit = (data) => newRegister(data);
-  
+  const onSubmit = (data) => console.log(data);
+
   return (
     <main>
       <div className={backgroundImage}>
@@ -34,54 +32,74 @@ const RegistrationPage = ({ pageTitle }) => {
                 <input
                   type="text"
                   placeholder="Nome Completo"
-                  {...register("name", {required:true, maxLength:20})}                  
+                  {...register("name", { required: true, maxLength: 20 })}
                 />
-                 <input
+                <input
                   type="text"
                   placeholder="Usuário"
-                  {...register("userName", {required:true, maxLength:20})}                  
+                  {...register("userName", { required: true, maxLength: 20 })}
                 />
               </div>
               <div className={row}>
                 <input
                   type="number"
                   placeholder="CPF Ex.: 123.123.123-12"
-                  {...register("cpf", {required:true, maxLength:11})}
+                  {...register("cpf", { required: true, maxLength: 11 })}
                 />
-                 <input
+                <input
                   type="number"
                   placeholder="dn. ex.00/00/0000"
-                  {...register("birthDate", {required:true, maxLength:11})}
+                  {...register("birthDate", { required: true, maxLength: 11 })}
                 />
               </div>
               <div className={row}>
                 <input
                   type="email"
                   placeholder="Email Ex.: Rodrigo@gmail.com"
-                  {...register("email",{required:true, maxLength:30})}
+                  {...register("email", { required: true, maxLength: 30 })}
                 />
               </div>
               <div className={row}>
                 <input
                   type="password"
                   placeholder="Senha"
-                  {...register("password",{required:true,maxLength:20})}
+                  {...register("password", { required: true, maxLength: 20 })}
                 />
               </div>
               <div className={row}>
-                <input type="number" placeholder="RG" {...register("rg",{required:true,maxLength:20})} />
-                <input type="number" placeholder="Cep" {...register("cep",{required:true ,maxLength:8})} />
+                <input
+                  type="number"
+                  placeholder="RG"
+                  {...register("rg", { required: true, maxLength: 20 })}
+                />
+                <input
+                  type="number"
+                  placeholder="Cep"
+                  {...register("cep", { required: true, maxLength: 8 })}
+                />
               </div>
               <div className={row}>
-                <input type="text" placeholder="Rua" {...register("street",{required:true,maxLength:20})} />
+                <input
+                  type="text"
+                  placeholder="Rua"
+                  {...register("street", { required: true, maxLength: 20 })}
+                />
               </div>
               <div className={row}>
-                <input type="text" placeholder="Cidade" {...register("city",{required:true,maxLength:50})} />
-                <input type="text" placeholder="bairro" {...register("district",{required:true,maxLength:50})} />
+                <input
+                  type="text"
+                  placeholder="Cidade"
+                  {...register("city", { required: true, maxLength: 50 })}
+                />
+                <input
+                  type="text"
+                  placeholder="bairro"
+                  {...register("district", { required: true, maxLength: 50 })}
+                />
                 <input
                   type="text"
                   placeholder="Número"
-                  {...register("number", {required:true,maxLength:20})}
+                  {...register("number", { required: true, maxLength: 20 })}
                 />
               </div>
               <hr />
@@ -91,7 +109,11 @@ const RegistrationPage = ({ pageTitle }) => {
                     Voltar
                   </Link>
                 </button>
-                <input className={buttonRegister} type="submit" value="Enviar" />
+                <input
+                  className={buttonRegister}
+                  type="submit"
+                  value="Enviar"
+                />
               </div>
             </form>
           </div>
