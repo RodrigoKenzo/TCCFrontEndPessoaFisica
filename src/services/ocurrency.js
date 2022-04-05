@@ -8,11 +8,11 @@ const newOcurrency = async () => {
   const url = "http://127.0.0.1:5000/api/Ocorrencias";
   const data = {
     Address: formData.Address,
-    AnswerDate: formData.AnswerDate,
+    AnswerDate: "",
     City: formData.City,
     Complement: formData.Complement,
     Details: formData.Details,
-    GenerationDate: DateTime,
+    GenerationDate: DateTime.toString(),
     Latitude: formData.Latitude,
     Longitude: formData.Longitude,
     ManyEnvolved: formData.ManyEnvolved,
@@ -23,6 +23,8 @@ const newOcurrency = async () => {
     Victims: formData.Victims,
     Urgency: formData.Urgency,
     caller: {
+      Username: "rodrigo@gmail.com",
+      Password: "123",
       Name: "Rodrigo",
       Email: "Rodrigo@gmail.com",
       Cep: "12124123",
