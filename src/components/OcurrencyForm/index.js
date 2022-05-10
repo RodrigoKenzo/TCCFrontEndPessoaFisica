@@ -62,16 +62,7 @@ const OcurrencyForm = () => {
                   type="text" 
                   style={{width: "60%", margin: "auto"}} 
                   placeholder="Nº vítimas Ex.: 1"
-                  {...register("victims", {required:true, maxLength:20})}
-                />
-              </div>
-              <p>Quantos feridos?</p>
-              <div className={row}>
-                <input 
-                  type="text" 
-                  style={{width: "60%"}} 
-                  placeholder="Nº vítimas Ex.: 1"
-                  {...register("userName", {required:true, maxLength:20})}
+                  {...register("Victims", {required:true, maxLength:20})}
                 />
               </div>
             </div>    
@@ -81,10 +72,10 @@ const OcurrencyForm = () => {
               style={{marginBottom: '20px'}}
               {...register("Urgency", {required:true, maxLength:20})}
             >
-              <option value="transito">Urgente</option>
-              <option value="crime">Alto</option>
-              <option value="desavencaCivil">Médio</option>
-              <option value="desastresNaturais">Baixo</option>
+              <option value="Urgente">Urgente</option>
+              <option value="Alto">Alto</option>
+              <option value="Médio">Médio</option>
+              <option value="Baixo">Baixo</option>
             </select>
             <div className={lastRow}>
               <button className={buttonBack} type="button"><Link className={noLink} to="/app/ocurrency">Voltar</Link></button>

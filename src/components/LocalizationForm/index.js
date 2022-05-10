@@ -41,7 +41,7 @@ const Address = () => {
               </div>
               <h4>Endereço</h4>
               <div className={row}>
-                <input type="text" style={{width: "70%", margin: "auto", marginBottom: "20px"}} placeholder="Ex.: Rua dos mafagafinhos" {...register("Adress", {required:true, maxLength:20})} />
+                <input type="text" style={{width: "70%", margin: "auto", marginBottom: "20px"}} placeholder="Ex.: Rua dos mafagafinhos" {...register("Address", {required:true, maxLength:20})} />
               </div>
               <h4>Número</h4>
               <div className={row}>

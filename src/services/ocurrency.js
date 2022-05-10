@@ -1,19 +1,34 @@
-import { useFormData } from "../contexts/formContext"
 const axios = require("axios");
 
-const newOcurrency = async () => {
+const newOcurrency = async (formData) => {
 
-	const { formData } = useFormData()
   const DateTime = new Date()
+
+  async function getLocation() {
+    if (navigator.geolocation) {
+      await navigator.geolocation.getCurrentPosition(showPosition)
+    } else { 
+      console.log("Geolocation is not supported by this browser.")
+    }
+  }
+  
+  function showPosition(position) {
+    const coords = {
+      Latitude: position.coords.latitude, 
+      Longitude: position.coords.longitude 
+    }
+    console.log('coords', coords)
+    return coords
+  }
   
   const url = "http://127.0.0.1:5000/api/Ocorrencias";
   const data = {
 		"OcurrencyType": formData.OcurrencyType,
-		"ManyEnvolved": formData.ManyEnvolved,
+		"ManyEnvolved": formData.ManyInvolved,
 		"Victims": formData.Victims,
 		"GenerationDate": DateTime,
-		"Latitude": formData.Latitude,
-		"Longitude": formData.Longitude,
+		"Latitude": getLocation().Latitude,
+		"Longitude": getLocation().Longitude,
 		"City": formData.City,
 		"State": formData.State,
 		"Address": formData.Address,
@@ -21,7 +36,7 @@ const newOcurrency = async () => {
 		"Neighborhood": formData.Neighborhood,
 		"Complement": formData.Complement,
 		"Details": formData.Details,
-		"AnswerDate": formData.AnswerDate,
+		"AnswerDate": "",
 		"Urgency": formData.Urgency
   };
 
