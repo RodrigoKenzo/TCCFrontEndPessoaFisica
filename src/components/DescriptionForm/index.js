@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'gatsby'
 import "react-responsive-combo-box/dist/index.css";
 import {
@@ -6,7 +6,6 @@ import {
   buttonRegister
 } from '../../styles/register.module.scss'
 import { noLink, textCentered, textTopCentered, row, lastRow } from '../../styles/details.module.scss'
-import { useForm } from "react-hook-form";
 import { navigate } from "gatsby"
 
 import { useFormData } from "../../contexts/formContext"
@@ -14,10 +13,15 @@ import newOcurrency from '../../services/ocurrency'
 
 const Details = () => {
 
-  const { register, handleSubmit } = useForm();
   const { formData, setFormData } = useFormData()
+  const [details, setDetails] = useState('')
 
-  const onSubmit = (data) => {
+  const onSubmit = (e) => {
+    e.preventDefault()
+
+    const data = {
+      Details: details
+    }
     setFormData(prev => {
       return {...prev, ...data }
     })
@@ -30,14 +34,21 @@ const Details = () => {
   return (
     <main>
       <React.Fragment>
-        <form onSubmit={handleSubmit(onSubmit)}>
+        <form onSubmit={onSubmit}>
           <div className={textCentered}>
             <div className={textTopCentered}>
               <h1>Deseja dar mais detalhes?</h1>
               <p>(opcional)</p>
             </div>
             <div className={row}>
-              <textarea type="text" style={{width: "70%", margin: "auto", marginBottom: "20px", height: "40vh", resize: "none"}} placeholder="Mais detalhes..." {...register("Details", {required:false, maxLength:20})} />
+              <textarea 
+                type="text" 
+                style={{width: "70%", margin: "auto", marginBottom: "20px", height: "40vh", resize: "none"}} 
+                placeholder="Mais detalhes..." 
+                required
+                value={details}
+                onChange={(e) => setDetails(e.target.value)}
+              />
             </div>
             <div className={lastRow}>
               <button className={buttonBack} type="button"><Link className={noLink} to="/app/localization-form">Voltar</Link></button>

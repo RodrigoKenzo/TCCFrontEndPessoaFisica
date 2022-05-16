@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'gatsby'
 import {
   buttonBack,
@@ -13,18 +13,29 @@ import {
   ocurrencyContainer,
   combobox
 } from '../../styles/ocurrency.module.scss'
-import { useForm } from "react-hook-form";
 import { navigate } from "gatsby"
 import { useFormData } from "../../contexts/formContext"
 
 const OcurrencyForm = () => {
 
-  const { register, handleSubmit } = useForm();
   const { setFormData } = useFormData()
+  const [ocurrencyType, setOcurrencyType] = useState('Trânsito')
+  const [manyInvolved, setManyInvolved] = useState('')
+  const [victims, setVictims] = useState('')
+  const [urgency, setUrgency] = useState('Urgente')
   
 
-  const onSubmit = (data) => {
+  const setOcurrencyData = (e) => {
+    e.preventDefault()
+
+    const data = {
+      OcurrencyType: ocurrencyType,
+      ManyInvolved: manyInvolved,
+      Victims: victims,
+      Urgency: urgency
+    }
     setFormData(data)
+    console.log(data)
     navigate('/app/localization-form')
   }
 
@@ -35,12 +46,14 @@ const OcurrencyForm = () => {
           <div className={textTopCentered}>
             <h1>Efetuar Ocorrência</h1>
           </div>
-          <form onSubmit={handleSubmit(onSubmit)}>
+          <form onSubmit={setOcurrencyData}>
             <div className={ocurrencyContainer}>
               <p>Tipo de Ocorrência</p>
               <select
                 className={combobox}
-                {...register("OcurrencyType", {required:true, maxLength:20})}
+                required
+                value={ocurrencyType}
+                onChange={(e) => setOcurrencyType(e.target.value)}
               >
                 <option value="transito">Trânsito</option>
                 <option value="crime">Crime</option>
@@ -53,7 +66,9 @@ const OcurrencyForm = () => {
                   type="text" 
                   style={{width: "60%", margin: "auto"}} 
                   placeholder="Nº envolvidos Ex.: 3" 
-                  {...register("ManyInvolved", {required:true, maxLength:20})}
+                  required
+                  value={manyInvolved}
+                  onChange={(e) => setManyInvolved(e.target.value)}
                 />
               </div>
               <p>Quantas vítimas?</p>
@@ -62,7 +77,9 @@ const OcurrencyForm = () => {
                   type="text" 
                   style={{width: "60%", margin: "auto"}} 
                   placeholder="Nº vítimas Ex.: 1"
-                  {...register("Victims", {required:true, maxLength:20})}
+                  required
+                  value={victims}
+                  onChange={(e) => setVictims(e.target.value)}
                 />
               </div>
             </div>    
@@ -70,7 +87,9 @@ const OcurrencyForm = () => {
             <select
               className={combobox}
               style={{marginBottom: '20px'}}
-              {...register("Urgency", {required:true, maxLength:20})}
+              required
+              value={urgency}
+              onChange={(e) => setUrgency(e.target.value)}
             >
               <option value="Urgente">Urgente</option>
               <option value="Alto">Alto</option>
