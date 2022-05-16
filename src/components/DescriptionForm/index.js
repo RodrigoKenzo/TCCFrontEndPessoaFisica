@@ -7,6 +7,7 @@ import {
 } from '../../styles/register.module.scss'
 import { noLink, textCentered, textTopCentered, row, lastRow } from '../../styles/details.module.scss'
 import { useForm } from "react-hook-form";
+import { navigate } from "gatsby"
 
 import { useFormData } from "../../contexts/formContext"
 import newOcurrency from '../../services/ocurrency'
@@ -23,6 +24,7 @@ const Details = () => {
     console.log('data', data)
     console.log('último', formData)
     newOcurrency(formData)
+    navigate('/app/ocurrency') 
   }
 
   return (

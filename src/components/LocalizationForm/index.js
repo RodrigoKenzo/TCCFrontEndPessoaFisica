@@ -57,7 +57,7 @@ const Address = () => {
               </div>
             <div className={lastRow}>
               <button className={buttonBack} type="button"><Link className={noLink} to="/app/ocurrency-form">Voltar</Link></button>
-              <button className={buttonRegister} type="submit">Não é Necessário</button>
+              <button className={buttonRegister} type="submit">Próximo</button>
             </div>
           </div>
         </form>
